@@ -1,0 +1,3 @@
+{
+  "extends": "@theholcron/tsconfig/node-next/tsconfig.json"
+}
