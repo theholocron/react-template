@@ -1,16 +1,16 @@
 {
-  "name": "@theholocron/<name>",
+  "name": "@theholocron/react-template",
   "description": "<description>",
-  "homepage": "https://github.com/theholocron/<name>#readme",
+  "homepage": "https://github.com/theholocron/react-template#readme",
   "author": "Newton Koumantzelis",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theholocron/<name>.git"
+    "url": "git+https://github.com/theholocron/react-template.git"
   },
-  "bugs": "https://github.com/theholocron/<name>/issues",
-  "releases": "https://github.com/theholocron/<name>/releases",
-  "wiki": "https://github.com/theholocron/<name>/wiki",
+  "bugs": "https://github.com/theholocron/react-template/issues",
+  "releases": "https://github.com/theholocron/react-template/releases",
+  "wiki": "https://github.com/theholocron/react-template/wiki",
   "license": "GPL-3.0",
   "packageManager": "npm@9.5.0",
   "commitlint": {
@@ -20,7 +20,7 @@
     "extends": "@theholocron"
   },
   "jest": {
-    "displayName": "<name>",
+    "displayName": "react-template",
     "preset": "@theholocron/jest-config"
   },
   "publishConfig": {
@@ -37,11 +37,12 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.9",
-    "@theholocron/commitlint-config": "^2.0.0",
-    "@theholocron/eslint-config": "^2.0.0",
-    "@theholocron/jest-config": "^2.0.0",
-    "@theholocron/lint-staged-config": "^2.0.0",
-    "@theholocron/prettier-config": "^2.0.0",
-    "@theholocron/tsconfig": "^2.0.0"
+    "@theholocron/bundlewatch-config": "^3.1.0",
+    "@theholocron/commitlint-config": "^3.1.0",
+    "@theholocron/eslint-config": "^3.1.0",
+    "@theholocron/jest-config": "^3.1.0",
+    "@theholocron/lint-staged-config": "^3.1.0",
+    "@theholocron/prettier-config": "^3.1.0",
+    "@theholocron/tsconfig": "^3.1.0"
   }
 }
