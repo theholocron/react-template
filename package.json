@@ -17,7 +17,10 @@
     "extends": "@theholocron"
   },
   "eslintConfig": {
-    "extends": "@theholocron"
+    "extends": [
+      "@theholocron",
+      "plugin:storybook/recommended"
+    ]
   },
   "jest": {
     "displayName": "<name>",
@@ -32,16 +35,34 @@
     "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,ts,tsx}'",
     "release": "changeset",
     "start": "",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.9",
-    "@theholocron/commitlint-config": "^2.0.0",
-    "@theholocron/eslint-config": "^2.0.0",
-    "@theholocron/jest-config": "^2.0.0",
-    "@theholocron/lint-staged-config": "^2.0.0",
-    "@theholocron/prettier-config": "^2.0.0",
-    "@theholocron/tsconfig": "^2.0.0"
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-onboarding": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "@storybook/test": "^8.3.5",
+    "@theholocron/commitlint-config": "^3.0.0",
+    "@theholocron/eslint-config": "^3.0.0",
+    "@theholocron/jest-config": "^3.0.0",
+    "@theholocron/lint-staged-config": "^3.0.0",
+    "@theholocron/prettier-config": "^3.0.0",
+    "@theholocron/tsconfig": "^3.0.0",
+    "chromatic": "^11.12.5",
+    "eslint-plugin-storybook": "^0.9.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^8.3.5",
+    "turbo": "^2.1.3"
   }
 }
