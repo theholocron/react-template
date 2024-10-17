@@ -28,6 +28,18 @@
   "wiki": "https://github.com/theholocron/react-template/wiki",
   "license": "GPL-3.0",
   "packageManager": "npm@9.5.0",
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "./dist/**/*.css",
+        "maxSize": "50 kB"
+      },
+      {
+        "path": "./dist/**/*.js",
+        "maxSize": "100 kB"
+      }
+    ]
+  },
   "commitlint": {
     "extends": "@theholocron"
   },
@@ -71,7 +83,6 @@
     "@storybook/test-runner": "^0.19.1",
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
-    "@theholocron/bundlewatch-config": "^3.1.0",
     "@theholocron/commitlint-config": "^3.1.0",
     "@theholocron/eslint-config": "^3.1.0",
     "@theholocron/jest-config": "^3.1.0",
