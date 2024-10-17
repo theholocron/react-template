@@ -10,20 +10,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cache Yarn dependencies and Cypress
+      - name: Cache npm dependencies and Cypress
         uses: actions/cache@v4
-        id: yarn-cache
+        id: npm-cache
         with:
           path: |
             ~/.cache/Cypress
             node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
+            ${{ runner.os }}-npm-v1
 
       - name: Install dependencies if cache invalid
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm ci
 
   # Run interaction and accessibility tests
   interaction-and-accessibility:
@@ -38,28 +38,28 @@ jobs:
         with:
           node-version: 20
 
-      - name: Restore Yarn dependencies
+      - name: Restore npm dependencies
         uses: actions/cache@v4
-        id: yarn-cache
+        id: npm-cache
         with:
           path: |
             ~/.cache/Cypress
             node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
+            ${{ runner.os }}-npm-v1
 
       - name: Install Playwright
         run: npx playwright install --with-deps
 
       - name: Build Storybook
-        run: yarn build-storybook --quiet
+        run: npm run build-storybook --quiet
 
       - name: Serve Storybook and run tests
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && yarn test-storybook"
+            "npx wait-on tcp:6006 && npm run test-storybook"
 
   # Run visual and composition tests with Chromatic
   visual-and-composition:
@@ -70,16 +70,16 @@ jobs:
         with:
           fetch-depth: 0 # Required to retrieve Git history
 
-      - name: Restore Yarn dependencies
+      - name: Restore npm dependencies
         uses: actions/cache@v4
-        id: yarn-cache
+        id: npm-cache
         with:
           path: |
             ~/.cache/Cypress
             node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
+            ${{ runner.os }}-npm-v1
 
       - name: Publish to Chromatic
         uses: chromaui/action@latest
@@ -96,16 +96,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Restore Yarn dependencies
+      - name: Restore npm dependencies
         uses: actions/cache@v4
-        id: yarn-cache
+        id: npm-cache
         with:
           path: |
             ~/.cache/Cypress
             node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
+            ${{ runner.os }}-npm-v1
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
