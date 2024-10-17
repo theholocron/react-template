@@ -1,0 +1,28 @@
+name: "Audit"
+
+on:
+  pull_request:
+    types: [synchronize, opened]
+
+jobs:
+  bundlewatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+      - run: npm ci
+
+      - name: Bundlewatch
+      - uses: jackyef/bundlewatch-gh-action@0.3.0
+        with:
+          build-script: npm run build
+          bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
+          bundlewatch-config: ./node_modules/@theholocron/bundlewatch-config/bundlewatch.config.js
