@@ -1,16 +1,16 @@
 {
-  "name": "@theholocron/<name>",
+  "name": "@theholocron/react-template",
   "description": "<description>",
-  "homepage": "https://github.com/theholocron/<name>#readme",
+  "homepage": "https://github.com/theholocron/react-template#readme",
   "author": "Newton Koumantzelis",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theholocron/<name>.git"
+    "url": "git+https://github.com/theholocron/react-template.git"
   },
-  "bugs": "https://github.com/theholocron/<name>/issues",
-  "releases": "https://github.com/theholocron/<name>/releases",
-  "wiki": "https://github.com/theholocron/<name>/wiki",
+  "bugs": "https://github.com/theholocron/react-template/issues",
+  "releases": "https://github.com/theholocron/react-template/releases",
+  "wiki": "https://github.com/theholocron/react-template/wiki",
   "license": "GPL-3.0",
   "packageManager": "npm@9.5.0",
   "commitlint": {
@@ -23,7 +23,7 @@
     ]
   },
   "jest": {
-    "displayName": "<name>",
+    "displayName": "react-template",
     "preset": "@theholocron/jest-config"
   },
   "publishConfig": {
@@ -43,6 +43,7 @@
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.9",
     "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-a11y": "^8.3.5",
     "@storybook/addon-essentials": "^8.3.5",
     "@storybook/addon-interactions": "^8.3.5",
     "@storybook/addon-links": "^8.3.5",
@@ -51,17 +52,20 @@
     "@storybook/react": "^8.3.5",
     "@storybook/react-vite": "^8.3.5",
     "@storybook/test": "^8.3.5",
+    "@theholocron/bundlewatch-config": "^3.1.0",
     "@theholocron/commitlint-config": "^3.0.0",
     "@theholocron/eslint-config": "^3.0.0",
     "@theholocron/jest-config": "^3.0.0",
     "@theholocron/lint-staged-config": "^3.0.0",
     "@theholocron/prettier-config": "^3.0.0",
     "@theholocron/tsconfig": "^3.0.0",
+    "@whitespace/storybook-addon-html": "^6.1.1",
     "chromatic": "^11.12.5",
     "eslint-plugin-storybook": "^0.9.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-syntax-highlighter": "^15.6.1",
     "storybook": "^8.3.5",
     "turbo": "^2.1.3"
   }

@@ -1,11 +1,11 @@
-# <name>
+# react-template
 
 <description> used within the Galaxy.
 
 ## Installation
 
 ```bash
-npm install --save-dev @theholocron/<name>
+npm install --save-dev @theholocron/react-template
 ```
 
 ## Usage
