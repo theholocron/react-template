@@ -2,15 +2,15 @@ import * as React from "react";
 
 import "./button.css";
 
-interface ButtonProps {
+export interface ButtonProps {
 	/** Is this the principal call to action on the page? */
 	primary?: boolean;
 	/** What background color to use */
-	backgroundColor?: string | null;
+	backgroundColor?: string;
 	/** How large should the button be? */
 	size?: "small" | "medium" | "large" | "xlarge";
 	/** Button contents */
-	label: string;
+	label: React.ReactNode;
 	/** Optional click handler */
 	onClick?: () => void;
 }
@@ -30,7 +30,7 @@ export function Button (props: ButtonProps) {
 		<button
 			type="button"
 			className={["storybook-button", `storybook-button--${size}`, mode].join(" ")}
-			style={backgroundColor && { backgroundColor }}
+			style={backgroundColor ? { backgroundColor } : undefined}
 			{...rest}
 		>
 			{label}

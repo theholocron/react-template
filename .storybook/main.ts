@@ -1,4 +1,5 @@
 import { type StorybookConfig } from "@storybook/react-vite";
+import * as path from "path";
 
 const config: StorybookConfig = {
 	addons: [
@@ -20,5 +21,17 @@ const config: StorybookConfig = {
 		"../src/**/*.mdx",
 		"../src/**/*.story.@(js|jsx|mjs|ts|tsx)",
 	],
+	// @TODO: abstract out to shared vite.config.ts
+	async viteFinal (config, options) {
+		const { mergeConfig } = await import('vite');
+		return mergeConfig(config, {
+			resolve: {
+				alias: {
+					'@': path.resolve(__dirname, '../src'), // Adjust the path based on your project structure
+				},
+			},
+		});
+	},
 };
+
 export default config;

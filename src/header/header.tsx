@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button } from "../button/button";
+import { Button } from "@/button";
 
 import "./header.css";
 
@@ -7,7 +7,7 @@ interface User {
 	name: string;
 }
 
-interface HeaderProps {
+export interface HeaderProps {
 	user?: User | null;
 	onLogin: () => void;
 	onLogout: () => void;
