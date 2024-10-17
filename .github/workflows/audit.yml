@@ -1,4 +1,4 @@
-name: "Audit"
+name: Audit
 
 on:
   pull_request:
@@ -14,14 +14,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20.x
           cache: "npm"
 
       - name: Install dependencies
-      - run: npm ci
+        run: npm ci
 
       - name: Bundlewatch
-      - uses: jackyef/bundlewatch-gh-action@0.3.0
+        uses: jackyef/bundlewatch-gh-action@0.3.0
         with:
           build-script: npm run build
           bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
