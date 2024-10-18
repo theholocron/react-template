@@ -1,3 +1,14 @@
 {
-  "extends": "@theholcron/tsconfig/node-next/tsconfig.json"
+  "display": "React Template",
+  "extends": "@tsconfig/vite-react/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "paths": {
+      "@/package": ["./package.json"],
+      "@/*": ["./src/*"]
+    },
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["./node_modules"]
 }

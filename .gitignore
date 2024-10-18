@@ -86,3 +86,5 @@ node_modules
 coverage
 reports
 dist
+
+*storybook.log
