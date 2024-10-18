@@ -1,5 +1,6 @@
-import { type StorybookConfig } from "@storybook/react-vite";
 import * as path from "path";
+import { type StorybookConfig } from "@storybook/react-vite";
+import { mergeConfig } = from "vite";
 
 const config: StorybookConfig = {
 	addons: [
@@ -11,6 +12,7 @@ const config: StorybookConfig = {
 		"@whitespace/storybook-addon-html",
 		"@storybook/addon-a11y",
 		"@storybook/addon-links",
+		"@storybook/addon-coverage",
 	],
 	framework: {
 		name: "@storybook/react-vite",
@@ -23,11 +25,10 @@ const config: StorybookConfig = {
 	],
 	// @TODO: abstract out to shared vite.config.ts
 	async viteFinal (config, options) {
-		const { mergeConfig } = await import('vite');
 		return mergeConfig(config, {
 			resolve: {
 				alias: {
-					'@': path.resolve(__dirname, '../src'), // Adjust the path based on your project structure
+					"@": path.resolve(__dirname, "../src"), // Adjust the path based on your project structure
 				},
 			},
 		});

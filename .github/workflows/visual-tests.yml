@@ -59,7 +59,7 @@ jobs:
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && npm run test-storybook"
+            "npx wait-on tcp:6006 && npm run test:storybook"
 
   # Run visual and composition tests with Chromatic
   visual-and-composition:
@@ -85,6 +85,7 @@ jobs:
         uses: chromaui/action@latest
         with:
           # Grab this from the Chromatic manage page
+          buildScriptName: "build:storybook"
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
   # Run user flow tests with Cypress
