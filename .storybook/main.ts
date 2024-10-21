@@ -14,11 +14,15 @@ const config: StorybookConfig = {
 		"@storybook/addon-links",
 		"@storybook/addon-coverage",
 	],
+	docs: {
+	    defaultName: "Documentation",
+	},
 	framework: {
 		name: "@storybook/react-vite",
 		// https://storybook.js.org/docs/api/main-config/main-config-framework
 		options: {},
 	},
+	staticDirs: ["../public"],
 	stories: [
 		"../src/**/*.mdx",
 		"../src/**/*.story.@(js|jsx|mjs|ts|tsx)",

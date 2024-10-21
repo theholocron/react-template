@@ -1,7 +1,13 @@
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { type Preview } from "@storybook/react";
+import { initialize, mswLoader } from "msw-storybook-addon";
+
+// Initialize MSW
+initialize();
 
 const preview: Preview = {
+	layout: "centered",
+	loaders: [mswLoader],
 	parameters: {
 		controls: {
 			matchers: {
@@ -20,6 +26,7 @@ const preview: Preview = {
 			// defaultViewport: 'ipad',
 		},
 	},
+	tags: ["autodocs"],
 };
 
 export default preview;
