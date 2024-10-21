@@ -1,15 +1,19 @@
-# Add 'docs' label to any changes within 'docs' folder or any subfolders
-# Add 'docs' label to any change to .md files within the entire repository
+# Add "docs" label to any changes within "docs" folder or any subfolders
+# Add "docs" label to any change to .md files within the entire repository
 documentation:
 - changed-files:
   - any-glob-to-any-file:
     - docs/**
-    - '**/*.md'
+    - "**/*.md"
 
-# Add 'bug' label to any PR where the head branch name starts with `fix` or has a `fix` section in the name
+# Add "bug" label to any PR where the head branch name starts with `fix` or has a `fix` section in the name
 bug:
- - head-branch: ['^fix', 'fix']
+- head-branch: ["^fix", "fix"]
 
-# Add 'enhancement' label to any PR where the head branch name starts with `feature` or has a `feature` section in the name
+# Add "enhancement" label to any PR where the head branch name starts with `feature` or has a `feature` section in the name
 enhancement:
- - head-branch: ['^feat', 'feature']
+- head-branch: ["^feat", "feature"]
+
+# Add "release" label to any PR that is opened against the `main` branch
+release:
+- base-branch: "main"

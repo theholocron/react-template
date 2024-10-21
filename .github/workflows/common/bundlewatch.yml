@@ -1,0 +1,14 @@
+name: Bundlewatch
+
+on:
+  workflow_call:
+
+jobs:
+  bundlewatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bundlewatch
+        uses: jackyef/bundlewatch-gh-action@0.3.0
+        with:
+          build-script: npm run build
+          bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}

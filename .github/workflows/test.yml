@@ -1,0 +1,43 @@
+name: Test
+
+on:
+  - push
+
+jobs:
+  setup:
+    uses: ./.github/workflows/common/setup.yml
+    with:
+      cache-key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
+      fetch-depth: 0
+
+  # Run visual and composition tests with Chromatic
+  visual-and-composition:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - id: test-visual-composition
+        name: Test Visual and Composition
+        uses: ./.github/workflows/common/chromatic.yml
+
+  # Run interaction and accessibility tests
+  interaction-and-accessibility:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Storybook
+        run: npm run build:storybook --quiet
+
+      - name: Serve Storybook and run tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && npm run test:storybook"
+
+  # Run user flow tests with Cypress
+  user-flow:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - id: test-user-flow
+        name: Test User Flow
+        uses: ./.github/workflows/common/cypress.yml

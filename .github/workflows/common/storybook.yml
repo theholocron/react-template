@@ -1,0 +1,15 @@
+name: Storybook
+
+on:
+  workflow_call:
+
+jobs:
+  storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish Storybook to GitHub Pages
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        with:
+          build_command: npm run build:storybook
+          install_command: npm ci
+          path: storybook-static
