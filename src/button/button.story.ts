@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import { expect, fn, within } from "@storybook/test";
 
 import { Button } from "./button";
 
@@ -19,16 +19,59 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Default: Story = {
+	args: {
+		label: "Button",
+	},
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const button = canvas.getByRole("button", { name: /Button/i });
+
+		await step("render default props", async () => {
+			await expect(button).toBeInTheDocument();
+			await expect(button).toHaveAttribute("type", "button");
+			await expect(button).toHaveClass("storybook-button");
+			await expect(button).toHaveClass("storybook-button--medium");
+			await expect(button).toHaveClass("storybook-button--secondary");
+		});
+	},
+};
+
 export const Primary: Story = {
 	args: {
 		primary: true,
 		label: "Button",
 	},
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const button = canvas.getByRole("button", { name: /Button/i });
+
+		await step("render primary", async () => {
+			await expect(button).toHaveClass("storybook-button--primary");
+		});
+	},
 };
 
-export const Secondary: Story = {
+export const Sizes: Story = {
 	args: {
 		label: "Button",
+		size: "medium", // Default size
+	},
+	play: async ({ canvasElement, args }) => {
+		const canvas = within(canvasElement);
+		const button = canvas.getByRole("button", { name: /Button/i });
+
+		// Define the sizes you want to test
+		const sizes = ["small", "medium", "large", "xlarge"] as const;
+
+		// Loop through each size and test it
+		for (const size of sizes) {
+			// Modify args dynamically to change the size prop
+			args.size = size;
+
+			// Assert the correct class is applied for the given size
+			await expect(button).toHaveClass(`storybook-button--${size}`);
+		}
 	},
 };
 
@@ -44,11 +87,4 @@ export const Small: Story = {
 		size: "small",
 		label: "Button",
 	},
-};
-
-export const TestButton: Story = {
-	args: {
-		primary: false,
-		label: "Button",
-	}
 };
