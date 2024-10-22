@@ -8,6 +8,9 @@
       "@/package": ["./package.json"],
       "@/*": ["./src/*"]
     },
+    "types": [
+      "cypress"
+    ]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["./node_modules"]
