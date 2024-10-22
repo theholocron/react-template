@@ -4,15 +4,13 @@ import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
 	addons: [
-		"@storybook/addon-onboarding",
-		"@storybook/addon-links",
-		"@storybook/addon-essentials",
-		"@chromatic-com/storybook",
-		"@storybook/addon-interactions",
-		"@whitespace/storybook-addon-html",
 		"@storybook/addon-a11y",
-		"@storybook/addon-links",
 		"@storybook/addon-coverage",
+		"@storybook/addon-essentials",
+		"@storybook/addon-interactions",
+		"@storybook/addon-links",
+		"@chromatic-com/storybook",
+		"@whitespace/storybook-addon-html",
 	],
 	docs: {
 	    defaultName: "Documentation",

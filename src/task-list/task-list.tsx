@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Task from "../task/task";
 
 export default function TaskList({
-  loading,
+  loading = false,
   tasks,
   onTogglePinTask,
   onArchiveTask,
@@ -73,8 +73,4 @@ TaskList.propTypes = {
   onArchiveTask: PropTypes.func.isRequired,
   onEditTitle: PropTypes.func.isRequired,
   onDeleteTask: PropTypes.func.isRequired,
-};
-
-TaskList.defaultProps = {
-  loading: false,
 };

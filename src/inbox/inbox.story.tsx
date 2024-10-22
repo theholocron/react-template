@@ -14,7 +14,7 @@ export const Default = {
   parameters: {
     msw: {
       handlers: [
-        http.get("/tasks", (req, res, ctx) => {
+        http.get("/tasks", () => {
           return HttpResponse.json(TaskListDefault.args);
         }),
       ],
@@ -29,7 +29,7 @@ export const Error = {
   parameters: {
     msw: {
       handlers: [
-        http.get("/tasks", (req, res, ctx) => {
+        http.get("/tasks", () => {
           return HttpResponse.json([]);
         }),
       ],

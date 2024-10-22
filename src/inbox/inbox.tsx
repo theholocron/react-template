@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import TaskList from "../task-list/task-list";
 import { useTasks } from "../task/useTasks";
 
-export default function InboxScreen({ error }) {
+export default function InboxScreen({ error = "" }) {
   const [tasks, dispatch] = useTasks();
 
   const archiveTask = (archive, id) => {
@@ -51,8 +51,4 @@ export default function InboxScreen({ error }) {
 }
 InboxScreen.propTypes = {
   error: PropTypes.string,
-};
-
-InboxScreen.defaultProps = {
-  error: "",
 };
