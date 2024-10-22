@@ -4,14 +4,9 @@ on:
   workflow_call:
 
 jobs:
-  storybook:
+  super-linter:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - name: Super-Linter
         uses: super-linter/super-linter@v7.1.0
         env:
