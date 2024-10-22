@@ -1,11 +1,14 @@
-import { useAuth } from "./useAuth";
-import InboxScreen from "../inbox/inbox";
-import LoginScreen from "../login/login";
-import "./index.css";
-function App() {
-  const [user, logIn] = useAuth();
+import * as React from "react";
+import { InboxScreen } from "../inbox";
+import { LoginScreen } from "../login";
+import { useAuth } from "./use-auth";
 
-  return <>{user?.token ? <InboxScreen /> : <LoginScreen onLogIn={logIn} />}</>;
+export function App () {
+	const [user, logIn] = useAuth();
+
+	if (user?.token) {
+		return <InboxScreen />;
+	}
+
+	return <LoginScreen onLogIn={logIn} />;
 }
-
-export default App;
