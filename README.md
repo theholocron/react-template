@@ -15,3 +15,5 @@ npm install --save-dev @theholocron/react-template
 ## Documentation
 
 <!-- document the api(s), or how to use with examples -->
+
+`brew install gitleaks`
