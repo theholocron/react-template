@@ -16,11 +16,6 @@ jobs:
       statuses: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - id: lint-super-linter
         name: Run Super Linter
         uses: ./.github/workflows/common/super-linter.yml
