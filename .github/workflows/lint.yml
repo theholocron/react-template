@@ -26,8 +26,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           IGNORE_GITIGNORED_FILES: true
-          CSS_FILE_NAME: "stylelint.config.js"
-          EDITORCONFIG_FILE_NAME: ".ecrc"
+          CSS_FILE_NAME: "${DEFAULT_WORKSPACE}/stylelint.config.js"
+          # EDITORCONFIG_FILE_NAME: ".editorconfig-checker.json"
           FIX_CSS_PRETTIER: true
           FIX_ENV: true
           FIX_GRAPHQL_PRETTIER: true
@@ -40,12 +40,13 @@ jobs:
           FIX_TSX: true
           FIX_TYPESCRIPT_PRETTIER: true
           FIX_YAML_PRETTIER: true
-          # GITHUB_ACTIONS_CONFIG_FILE: "actionlint.yml"
-          GITLEAKS_CONFIG: ".gitleaks.toml" # Path to your Gitleaks config if you have one
-          JAVASCRIPT_ES_CONFIG_FILE: "eslint.config.js"
-          MARKDOWN_CONFIG_FILE: ".markdown-lint.yml"
-          PRETTIER_CONFIG: "prettier.config.js"
-          TYPESCRIPT_ES_CONFIG_FILE: "eslint.config.js"
+          # GITHUB_ACTIONS_CONFIG_FILE: "${DEFAULT_WORKSPACE}/actionlint.yml"
+          # GITLEAKS_CONFIG: "${DEFAULT_WORKSPACE}/.gitleaks.toml" # Path to your Gitleaks config if you have one
+          JAVASCRIPT_ES_CONFIG_FILE: "${DEFAULT_WORKSPACE}/eslint.config.js"
+          # MARKDOWN_CONFIG_FILE: ".markdown-lint.yml"
+          # NATURAL_LANGUAGE_CONFIG_FILE: "textlintrc.js"
+          PRETTIER_CONFIG: "${DEFAULT_WORKSPACE}/prettier.config.js"
+          TYPESCRIPT_ES_CONFIG_FILE: "${DEFAULT_WORKSPACE}/eslint.config.js"
           TYPESCRIPT_STANDARD_TSCONFIG_FILE: ${DEFAULT_WORKSPACE}/tsconfig.json
           VALIDATE_CSS_PRETTIER: true
           VALIDATE_DOCKERFILE: true
@@ -61,6 +62,7 @@ jobs:
           VALIDATE_JSON_PRETTIER: true
           VALIDATE_JSX_PRETTIER: true
           VALIDATE_MARKDOWN_PRETTIER: true
+          VALIDATE_NATURAL_LANGUAGE: true
           VALIDATE_TYPESCRIPT_PRETTIER: true
           VALIDATE_YAML_PRETTIER: true
 
