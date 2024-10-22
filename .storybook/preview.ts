@@ -2,6 +2,8 @@ import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { type Preview } from "@storybook/react";
 import { initialize, mswLoader } from "msw-storybook-addon";
 
+import "../src/app/index.css";
+
 // Initialize MSW
 initialize();
 
