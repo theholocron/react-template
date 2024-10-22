@@ -8,16 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-  lint:
-    needs: setup
+  super-lint:
     permissions:
       # To write linting fixes
       contents: write
@@ -25,9 +16,53 @@ jobs:
       statuses: write
     runs-on: ubuntu-latest
     steps:
-      - id: lint-super-linter
-        name: Run Super Linter
-        uses: ./.github/workflows/common/super-linter.yml
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Super-Linter
+        uses: super-linter/super-linter@v7.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IGNORE_GITIGNORED_FILES: true
+          CSS_FILE_NAME: "stylelint.config.js"
+          EDITORCONFIG_FILE_NAME: ".ecrc"
+          FIX_CSS_PRETTIER: true
+          FIX_ENV: true
+          FIX_GRAPHQL_PRETTIER: true
+          FIX_HTML_PRETTIER: true
+          FIX_JAVASCRIPT_PRETTIER: true
+          FIX_JSON_PRETTIER: true
+          FIX_JSX_PRETTIER: true
+          FIX_MARKDOWN_PRETTIER: true
+          FIX_SHELL_SHFMT: true
+          FIX_TSX: true
+          FIX_TYPESCRIPT_PRETTIER: true
+          FIX_YAML_PRETTIER: true
+          # GITHUB_ACTIONS_CONFIG_FILE: "actionlint.yml"
+          GITLEAKS_CONFIG: ".gitleaks.toml" # Path to your Gitleaks config if you have one
+          JAVASCRIPT_ES_CONFIG_FILE: "eslint.config.js"
+          MARKDOWN_CONFIG_FILE: ".markdown-lint.yml"
+          PRETTIER_CONFIG: "prettier.config.js"
+          TYPESCRIPT_ES_CONFIG_FILE: "eslint.config.js"
+          TYPESCRIPT_STANDARD_TSCONFIG_FILE: ${DEFAULT_WORKSPACE}/tsconfig.json
+          VALIDATE_CSS_PRETTIER: true
+          VALIDATE_DOCKERFILE: true
+          VALIDATE_EDITORCONFIG: true
+          VALIDATE_ENV: true
+          VALIDATE_GIT_COMMITLINT: true
+          VALIDATE_GIT_MERGE_CONFLICT_MARKERS: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_GITLEAKS: true
+          VALIDATE_GRAPHQL_PRETTIER: true
+          VALIDATE_HTML_PRETTIER: true
+          VALIDATE_JAVASCRIPT_PRETTIER: true
+          VALIDATE_JSON_PRETTIER: true
+          VALIDATE_JSX_PRETTIER: true
+          VALIDATE_MARKDOWN_PRETTIER: true
+          VALIDATE_TYPESCRIPT_PRETTIER: true
+          VALIDATE_YAML_PRETTIER: true
 
       - name: Commit and push linting fixes
         # Run only on:
