@@ -7,7 +7,7 @@ export default defineConfig({
 	plugins: [react()],
 	build: {
 		lib: {
-			entry: path.resolve(__dirname, "src/app/index.ts"), // Entry point of your library
+			entry: path.resolve(__dirname, "src/index.ts"), // Entry point of your library
 			name: "react-template",
 			formats: ["es", "cjs"], // Specify formats (ESM and CommonJS)
 			fileName: (format) => `react-template.${format}.js`,
