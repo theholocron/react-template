@@ -25,6 +25,8 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - id: audit-bundle-size
-        name: Check bundle size
-        uses: ./.github/workflows/bundlewatch.workflow.yml
+      - uses: jackyef/bundlewatch-gh-action@0.3.0
+        id: audit-bundle-size
+        with:
+          build-script: npm run build
+          bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
