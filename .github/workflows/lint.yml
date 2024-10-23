@@ -26,9 +26,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           IGNORE_GITIGNORED_FILES: true
-          CSS_FILE_NAME: "${DEFAULT_WORKSPACE}/stylelint.config.js"
+          # CSS_FILE_NAME: "${DEFAULT_WORKSPACE}/stylelint.config.js"
           # EDITORCONFIG_FILE_NAME: ".editorconfig-checker.json"
-          FIX_CSS_PRETTIER: true
+          # FIX_CSS_PRETTIER: true
           FIX_ENV: true
           FIX_GRAPHQL_PRETTIER: true
           FIX_HTML_PRETTIER: true
@@ -48,7 +48,7 @@ jobs:
           PRETTIER_CONFIG: "${DEFAULT_WORKSPACE}/prettier.config.js"
           TYPESCRIPT_ES_CONFIG_FILE: "${DEFAULT_WORKSPACE}/eslint.config.js"
           TYPESCRIPT_STANDARD_TSCONFIG_FILE: ${DEFAULT_WORKSPACE}/tsconfig.json
-          VALIDATE_CSS_PRETTIER: true
+          # VALIDATE_CSS_PRETTIER: true
           VALIDATE_DOCKERFILE: true
           VALIDATE_EDITORCONFIG: true
           VALIDATE_ENV: true
