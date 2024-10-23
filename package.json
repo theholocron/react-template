@@ -3,6 +3,21 @@
   "description": "<description>",
   "homepage": "https://github.com/theholocron/react-template#readme",
   "author": "Newton Koumantzelis",
+  "main": "dist/react-template.cjs.js",
+  "module": "dist/react-template.es.js",
+  "style": "dist/style.css",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/react-template.es.js",
+      "require": "./dist/react-template.cjs.js"
+    },
+    "./style": "./dist/style.css"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "type": "module",
   "version": "0.1.0",
   "repository": {
     "type": "git",
@@ -13,36 +28,54 @@
   "wiki": "https://github.com/theholocron/react-template/wiki",
   "license": "GPL-3.0",
   "packageManager": "npm@9.5.0",
-  "commitlint": {
-    "extends": "@theholocron"
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "./dist/**/*.css",
+        "maxSize": "50 kB"
+      },
+      {
+        "path": "./dist/**/*.js",
+        "maxSize": "100 kB"
+      }
+    ]
   },
-  "eslintConfig": {
-    "extends": "@theholocron"
-  },
-  "jest": {
-    "displayName": "react-template",
-    "preset": "@theholocron/jest-config"
+  "msw": {
+    "workerDirectory": "public"
   },
   "publishConfig": {
     "access": "public"
   },
-  "prettier": "@theholocron/prettier-config",
   "scripts": {
-    "build": "tsc --noEmit",
-    "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,ts,tsx}'",
+    "dev": "vite",
+    "build": "vite build",
+    "build:storybook": "storybook build",
+    "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
+    "preview": "vite preview",
     "release": "changeset",
-    "start": "",
-    "test": "jest"
+    "start": "storybook dev -p 6006",
+    "test": "vitest",
+    "test:cypress": "cypress open",
+    "test:storybook": "test-storybook --coverage"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.9",
-    "@theholocron/bundlewatch-config": "^3.1.0",
-    "@theholocron/commitlint-config": "^3.1.0",
-    "@theholocron/eslint-config": "^3.1.0",
-    "@theholocron/jest-config": "^3.1.0",
-    "@theholocron/lint-staged-config": "^3.1.0",
-    "@theholocron/prettier-config": "^3.1.0",
-    "@theholocron/tsconfig": "^3.1.0"
+    "@theholocron/commitlint-config": "^3.4.3",
+    "@theholocron/eslint-config": "^3.4.3",
+    "@theholocron/jest-config": "^3.4.3",
+    "@theholocron/lint-staged-config": "^3.4.3",
+    "@theholocron/prettier-config": "^3.4.3",
+    "@theholocron/storybook-config": "^3.4.3",
+    "@theholocron/stylelint-config": "^3.4.3",
+    "@tsconfig/vite-react": "^3.0.2",
+    "@vitejs/plugin-react": "^4.3.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.9"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
