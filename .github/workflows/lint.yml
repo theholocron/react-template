@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
 
       - name: Super-Linter
-        uses: super-linter/super-linter@v7.1.0
+        uses: super-linter/super-linter/slim@v7.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           IGNORE_GITIGNORED_FILES: true
@@ -42,12 +42,12 @@ jobs:
           FIX_YAML_PRETTIER: true
           # GITHUB_ACTIONS_CONFIG_FILE: "${DEFAULT_WORKSPACE}/actionlint.yml"
           # GITLEAKS_CONFIG: "${DEFAULT_WORKSPACE}/.gitleaks.toml" # Path to your Gitleaks config if you have one
-          JAVASCRIPT_ES_CONFIG_FILE: "${DEFAULT_WORKSPACE}/eslint.config.js"
+          JAVASCRIPT_ES_CONFIG_FILE: "./eslint.config.js"
           # MARKDOWN_CONFIG_FILE: ".markdown-lint.yml"
           # NATURAL_LANGUAGE_CONFIG_FILE: "textlintrc.js"
-          PRETTIER_CONFIG: "${DEFAULT_WORKSPACE}/prettier.config.js"
-          TYPESCRIPT_ES_CONFIG_FILE: "${DEFAULT_WORKSPACE}/eslint.config.js"
-          TYPESCRIPT_STANDARD_TSCONFIG_FILE: ${DEFAULT_WORKSPACE}/tsconfig.json
+          PRETTIER_CONFIG: "./prettier.config.js"
+          TYPESCRIPT_ES_CONFIG_FILE: "./eslint.config.js"
+          TYPESCRIPT_STANDARD_TSCONFIG_FILE: "./tsconfig.json"
           # VALIDATE_CSS_PRETTIER: true
           VALIDATE_DOCKERFILE: true
           VALIDATE_EDITORCONFIG: true
@@ -71,7 +71,7 @@ jobs:
         # - Pull requests
         # - Not on the default branch
         if: >
-          github.event_name == 'pull_request' &&
+          github.event_name == "pull_request" &&
           github.ref_name != github.event.repository.default_branch
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
