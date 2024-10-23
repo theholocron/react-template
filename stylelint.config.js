@@ -5,9 +5,7 @@ import theholocron from "@theholocron/stylelint-config";
  * @type {import("stylelint").Config}
  */
 const config = {
-	extends: [
-		...theholocron,
-	],
+	extends: [...theholocron],
 };
 
 export default config;
