@@ -13,7 +13,7 @@ const config: StorybookConfig = {
 		"@whitespace/storybook-addon-html",
 	],
 	docs: {
-	    defaultName: "Documentation",
+		defaultName: "Documentation",
 	},
 	framework: {
 		name: "@storybook/react-vite",

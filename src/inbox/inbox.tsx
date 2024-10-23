@@ -1,8 +1,7 @@
-import * as React from "react";
 import { TaskList, useTasks } from "../tasks";
 
 export interface InboxProps {
-  error?: string;
+	error?: string;
 }
 
 type TaskState = "TASK_PINNED" | "TASK_INBOX";

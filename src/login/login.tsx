@@ -2,7 +2,7 @@ import * as React from "react";
 import "./login.css";
 
 export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
-    onSubmit: (formData: { [key: string]: string }) => void;
+	onSubmit: (formData: { [key: string]: string }) => void;
 }
 
 export function LoginForm (props: LoginFormProps) {
@@ -17,7 +17,7 @@ export function LoginForm (props: LoginFormProps) {
 			onSubmit={(event) => {
 				event.preventDefault();
 				const elementsArray = Array.from(event.currentTarget.elements);
-				const formData = elementsArray.reduce((acc: { [key: string]: string }, elem: any) => {
+				const formData = elementsArray.reduce((acc: { [key: string]: string }, elem: object) => {
 					if (elem.id) {
 						acc[elem.id] = elem.value;
 					}
@@ -64,21 +64,21 @@ export function LoginForm (props: LoginFormProps) {
 }
 
 export interface LoginProps {
-    onLogIn: (formData: { [key: string]: string }) => void;
+	onLogIn: (formData: { [key: string]: string }) => void;
 }
 
 export function Login (props: LoginProps) {
-    return (
-        <div className="page lists-show">
-            <div className="loginscreen">
-                <div className="login-screen-container">
-                    <header className="loginscreen-header">
-                        <h1 className="loginscreen-heading">Taskbox</h1>
-                        <p className="loginscreen-text">Sign in to your account</p>
-                    </header>
-                    <LoginForm onSubmit={props.onLogIn} />
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<div className="page lists-show">
+			<div className="loginscreen">
+				<div className="login-screen-container">
+					<header className="loginscreen-header">
+						<h1 className="loginscreen-heading">Taskbox</h1>
+						<p className="loginscreen-text">Sign in to your account</p>
+					</header>
+					<LoginForm onSubmit={props.onLogIn} />
+				</div>
+			</div>
+		</div>
+	);
 }

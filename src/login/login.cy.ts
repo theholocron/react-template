@@ -8,7 +8,7 @@ describe("The Login Page", () => {
 			body: {
 				user: {
 					name: "Alice Carr",
-					token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+					token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", // gitleaks:allow
 				},
 			},
 		});
@@ -22,7 +22,7 @@ describe("The Login Page", () => {
 
 	it("user can authenticate using the login form", () => {
 		const email: string = "alice.carr@test.com";
-		const password: string = "k12h1k0$5;lpa@Afn";
+		const password: string = "k12h1k0$5;lpa@Afn"; // gitleaks:allow
 
 		// Visit the home page
 		cy.visit("/");
