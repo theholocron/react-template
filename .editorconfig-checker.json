@@ -1,7 +1,6 @@
 {
   "Exclude": [
-    "LICENSE",
-    "public",
-    "\\.md$"
+    "^LICENSE$",
+    "^public/.*"
   ],
 }
