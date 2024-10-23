@@ -11,6 +11,7 @@ jobs:
   super-lint:
     name: "Lint entire codebase"
     permissions:
+      workflows: write # write to fix workflows
       contents: write # write linting fixes
       statuses: write # write Super-linter status checks
     runs-on: ubuntu-latest
@@ -36,19 +37,18 @@ jobs:
           IGNORE_GITIGNORED_FILES: true
           LINTER_RULES_PATH: /
           CSS_FILE_NAME: "stylelint.config.js"
-          # EDITORCONFIG_FILE_NAME: ".editorconfig-checker.json"
-          # Fix will only work if i can commit and thats not working right now
-          # FIX_CSS_PRETTIER: true
-          # FIX_ENV: true
-          # FIX_GRAPHQL_PRETTIER: true
-          # FIX_HTML_PRETTIER: true
-          # FIX_JAVASCRIPT_PRETTIER: true
-          # FIX_JSON_PRETTIER: true
-          # FIX_JSX_PRETTIER: true
-          # FIX_MARKDOWN_PRETTIER: true
-          # FIX_TSX: true
-          # FIX_TYPESCRIPT_PRETTIER: true
-          # FIX_YAML_PRETTIER: true
+          EDITORCONFIG_FILE_NAME: ".editorconfig-checker.json"
+          FIX_CSS_PRETTIER: true
+          FIX_ENV: true
+          FIX_GRAPHQL_PRETTIER: true
+          FIX_HTML_PRETTIER: true
+          FIX_JAVASCRIPT_PRETTIER: true
+          FIX_JSON_PRETTIER: true
+          FIX_JSX_PRETTIER: true
+          FIX_MARKDOWN_PRETTIER: true
+          FIX_TSX: true
+          FIX_TYPESCRIPT_PRETTIER: true
+          FIX_YAML_PRETTIER: true
           # GITHUB_ACTIONS_CONFIG_FILE: "actionlint.yml"
           # GITLEAKS_CONFIG: ".gitleaks.toml" # Path to your Gitleaks config if you have one
           JAVASCRIPT_ES_CONFIG_FILE: "eslint.config.js"
@@ -76,17 +76,17 @@ jobs:
           VALIDATE_TYPESCRIPT_PRETTIER: true
           VALIDATE_YAML_PRETTIER: true
 
-      # - uses: stefanzweifel/git-auto-commit-action@v5
-      #   name: Commit and push linting fixes
-      #   # Run only on:
-      #   # - Pull requests
-      #   # - Not on the default branch
-      #   if: >
-      #     github.event_name == 'pull_request' &&
-      #     github.ref_name != github.event.repository.default_branch
-      #   with:
-      #     branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
-      #     commit_message: "chore: fix linting issues"
-      #     commit_options: '--no-verify --signoff'
-      #     commit_user_name: super-linter
-      #     commit_user_email: super-linter@super-linter.dev
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        name: Commit and push linting fixes
+        # Run only on:
+        # - Pull requests
+        # - Not on the default branch
+        if: >
+          github.event_name == 'pull_request' &&
+          github.ref_name != github.event.repository.default_branch
+        with:
+          branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
+          commit_message: "chore: fix linting issues"
+          commit_options: '--no-verify --signoff'
+          commit_user_name: super-linter
+          commit_user_email: super-linter@super-linter.dev
