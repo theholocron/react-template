@@ -3,10 +3,7 @@
  * @type {import("stylelint").Config}
  */
 const config = {
-	extends: [
-		"stylelint-config-standard",
-		"stylelint-config-standard-scss",
-	],
-}
+	extends: ["stylelint-config-standard", "stylelint-config-standard-scss"],
+};
 
 export default config;

@@ -6,5 +6,5 @@ export default defineConfig({
 		specPattern: "src/**/*.{cy.js,cy.ts}",
 		supportFile: false,
 	},
-	projectId: '6dsxao',
+	projectId: "6dsxao",
 });

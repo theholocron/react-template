@@ -11,14 +11,12 @@ export interface TaskResponse {
 	tasks: Task[];
 }
 
-const getTasks = (options: RequestInit): Promise<TaskResponse> =>
-	fetch("/tasks", options).then((res) => res.json());
+const getTasks = (options: RequestInit): Promise<TaskResponse> => fetch("/tasks", options).then((res) => res.json());
 
-const updateTask = (tasks: Task[], id: string, updatedTask: Partial<Task>): Task[]  =>
-	tasks.map((task) => task.id === id ? { ...task, ...updatedTask } : task);
+const updateTask = (tasks: Task[], id: string, updatedTask: Partial<Task>): Task[] =>
+	tasks.map((task) => (task.id === id ? { ...task, ...updatedTask } : task));
 
-const deleteTask = (tasks: Task[], id: string): Task[] =>
-	tasks.filter((task) => task.id !== id);
+const deleteTask = (tasks: Task[], id: string): Task[] => tasks.filter((task) => task.id !== id);
 
 export type TaskAction =
 	| { type: "UPDATE_TASKS"; tasks: Task[] }
@@ -28,7 +26,7 @@ export type TaskAction =
 	| { type: "DELETE_TASK"; id: string }
 	| { type: "EDIT_TITLE"; id: string; title: string };
 
-export function reducer (tasks: Task[], action: TaskAction): Task[] {
+export function reducer(tasks: Task[], action: TaskAction): Task[] {
 	switch (action.type) {
 		case "UPDATE_TASKS":
 			return action.tasks;

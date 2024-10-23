@@ -21,12 +21,9 @@ const config: StorybookConfig = {
 		options: {},
 	},
 	staticDirs: ["../public"],
-	stories: [
-		"../src/**/*.mdx",
-		"../src/**/*.story.@(js|jsx|mjs|ts|tsx)",
-	],
+	stories: ["../src/**/*.mdx", "../src/**/*.story.@(js|jsx|mjs|ts|tsx)"],
 	// @TODO: abstract out to shared vite.config.ts
-	async viteFinal (config, options) {
+	async viteFinal(config, options) {
 		return mergeConfig(config, {
 			resolve: {
 				alias: {

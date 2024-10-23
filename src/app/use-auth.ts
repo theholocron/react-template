@@ -15,7 +15,7 @@ export interface AuthResponse {
 	user: User;
 }
 
-function authenticate (options: AuthOptions): Promise<AuthResponse> {
+function authenticate(options: AuthOptions): Promise<AuthResponse> {
 	return fetch("/authenticate", {
 		method: "POST",
 		...options,
@@ -23,12 +23,10 @@ function authenticate (options: AuthOptions): Promise<AuthResponse> {
 }
 
 // Define the action type for the reducer
-type AuthAction =
-	| { type: "LOG_IN"; user: User }
-	| { type: "LOG_OUT" };
+type AuthAction = { type: "LOG_IN"; user: User } | { type: "LOG_OUT" };
 
 // Reducer function for managing user state
-function reducer (user: User | null, action: AuthAction): User | null {
+function reducer(user: User | null, action: AuthAction): User | null {
 	switch (action.type) {
 		case "LOG_IN":
 			return action.user;
@@ -37,7 +35,7 @@ function reducer (user: User | null, action: AuthAction): User | null {
 		default:
 			return user;
 	}
-};
+}
 
 // Define the credentials type for login
 export interface Credentials {
