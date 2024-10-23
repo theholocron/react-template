@@ -3,28 +3,20 @@ name: "Setup"
 on:
   workflow_call:
     inputs:
-      cache-key:
-        required: true
-        type: string
-
       fetch-depth:
+        default: 1 # Default fetch depth (shallow clone)
         description: "Git fetch depth"
         required: false
-        default: 1 # Default fetch depth (shallow clone)
-
-      runner-os:
-        required: false
-        type: string
-        default: "ubuntu-latest" # Default OS
+        type: number
 
 jobs:
   setup:
-    runs-on: ${{ inputs['runner-os'] }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: ${{ inputs["fetch-depth"] }}
+          fetch-depth: ${{ inputs['fetch-depth'] }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -32,17 +24,5 @@ jobs:
           cache: npm
           node-version: 20.x
 
-      - id: npm-cache
-        name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ inputs['runner-os'] }}-npm-v1-${{ inputs.cache-key }}
-          restore-keys: |
-            ${{ inputs['runner.os'] }}-npm-v1
-
       - name: Install dependencies
-        if: steps.npm-cache.outputs.cache-hit != "true"
         run: npm ci

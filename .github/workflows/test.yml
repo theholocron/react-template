@@ -7,9 +7,7 @@ jobs:
   setup:
     uses: ./.github/workflows/setup.workflow.yml
     with:
-      cache-key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
       fetch-depth: 0
-      runner-os: ${{ runner.os }}
 
   # Run visual and composition tests with Chromatic
   visual-and-composition:
