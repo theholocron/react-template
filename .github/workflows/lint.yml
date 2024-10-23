@@ -11,7 +11,6 @@ jobs:
   super-lint:
     name: "Lint entire codebase"
     permissions:
-      workflows: write # write to fix workflows
       contents: write # write linting fixes
       statuses: write # write Super-linter status checks
     runs-on: ubuntu-latest
