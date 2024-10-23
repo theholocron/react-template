@@ -19,6 +19,7 @@ jobs:
         name: Checkout repository
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
 
       - uses: actions/setup-node@v4
         name: Setup Node.js @v20
@@ -89,4 +90,3 @@ jobs:
           commit_options: '--no-verify --signoff'
           commit_user_name: super-linter
           commit_user_email: super-linter@super-linter.dev
-          token: ${{ secrets.GH_TOKEN }}
