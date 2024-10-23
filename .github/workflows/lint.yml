@@ -8,31 +8,29 @@ permissions:
   contents: read
 
 jobs:
-  setup:
+  super-lint:
+    name: "Lint entire codebase"
+    permissions:
+      contents: write # write linting fixes
+      statuses: write # write Super-linter status checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        name: Checkout repository
         with:
           fetch-depth: 0
 
       - uses: actions/setup-node@v4
+        name: Setup Node.js @v20
         with:
           cache: npm
           node-version: 20.x
 
       - run: npm ci
+        name: Install dependencies
 
-  super-lint:
-    needs: setup
-    permissions:
-      # To write linting fixes
-      contents: write
-      # To write Super-linter status checks
-      statuses: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Super-Linter
-        uses: super-linter/super-linter/slim@v7.1.0
+      - uses: super-linter/super-linter/slim@v7.1.0
+        name: Run Super Linter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           IGNORE_GITIGNORED_FILES: true
@@ -77,14 +75,14 @@ jobs:
           VALIDATE_TYPESCRIPT_PRETTIER: true
           VALIDATE_YAML_PRETTIER: true
 
-      - name: Commit and push linting fixes
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        name: Commit and push linting fixes
         # Run only on:
         # - Pull requests
         # - Not on the default branch
         if: >
           github.event_name == 'pull_request' &&
           github.ref_name != github.event.repository.default_branch
-        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
           commit_message: "chore: fix linting issues"

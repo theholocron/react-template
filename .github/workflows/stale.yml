@@ -1,4 +1,4 @@
-name: Mark stale issues and pull requests
+name: Stale
 
 on:
   schedule:
@@ -6,6 +6,7 @@ on:
 
 jobs:
   stale:
+    name: Mark stale issues and pull requests
     permissions:
       contents: write # only for delete-branch option
       issues: write
