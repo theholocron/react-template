@@ -13,6 +13,7 @@ jobs:
     with:
       cache-key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
       fetch-depth: 0
+      runner-os: ${{ runner.os }}
 
   super-lint:
     needs: setup

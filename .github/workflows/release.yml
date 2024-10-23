@@ -12,6 +12,7 @@ jobs:
     uses: ./.github/workflows/setup.workflow.yml
     with:
       cache-key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
+      runner-os: ${{ runner.os }}
 
   npm:
     needs: setup

@@ -12,9 +12,14 @@ on:
         required: false
         default: 1 # Default fetch depth (shallow clone)
 
+      runner-os:
+        required: false
+        type: string
+        default: "ubuntu-latest" # Default OS
+
 jobs:
   setup:
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs['runner-os'] }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,9 +39,9 @@ jobs:
           path: |
             ~/.cache/Cypress
             node_modules
-          key: ${{ runner.os }}-npm-v1-${{ inputs.cache-key }}
+          key: ${{ inputs['runner-os'] }}-npm-v1-${{ inputs.cache-key }}
           restore-keys: |
-            ${{ runner.os }}-npm-v1
+            ${{ inputs['runner.os'] }}-npm-v1
 
       - name: Install dependencies
         if: steps.npm-cache.outputs.cache-hit != "true"
