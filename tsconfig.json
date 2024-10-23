@@ -1,15 +1,15 @@
 {
-	"display": "React Template",
-	"extends": "@tsconfig/vite-react/tsconfig.json",
-	"compilerOptions": {
-		"baseUrl": "./",
-		"outDir": "./dist",
-		"paths": {
-			"@/package": ["./package.json"],
-			"@/*": ["./src/*"]
-		},
-		"types": ["cypress"]
-	},
-	"include": ["**/*.ts", "**/*.tsx"],
-	"exclude": ["./node_modules"]
+  "display": "React Template",
+  "extends": "@tsconfig/vite-react/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "paths": {
+      "@/package": ["./package.json"],
+      "@/*": ["./src/*"]
+    },
+    "types": ["cypress"]
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["./node_modules"]
 }
