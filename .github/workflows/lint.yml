@@ -8,7 +8,14 @@ permissions:
   contents: read
 
 jobs:
+  setup:
+    uses: ./.github/workflows/setup.workflow.yml
+    with:
+      cache-key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
+      fetch-depth: 0
+
   super-lint:
+    needs: setup
     permissions:
       # To write linting fixes
       contents: write
@@ -16,11 +23,6 @@ jobs:
       statuses: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - name: Super-Linter
         uses: super-linter/super-linter/slim@v7.1.0
         env:

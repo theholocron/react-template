@@ -9,7 +9,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   setup:
-    uses: ./.github/workflows/common/setup.yml
+    uses: ./.github/workflows/setup.workflow.yml
     with:
       cache-key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
 
@@ -23,4 +23,4 @@ jobs:
     steps:
       - id: release-npm
         name: Publish to NPM
-        uses: ./.github/workflows/common/changesets.yml
+        uses: ./.github/workflows/changesets.workflow.yml

@@ -18,4 +18,4 @@ jobs:
     steps:
       - id: deploy-github-pages
         name: Deploy to GitHub Pages
-        uses: ./.github/workflows/common/storybook.yml
+        uses: ./.github/workflows/storybook.workflow.yml

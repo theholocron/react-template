@@ -5,7 +5,7 @@ on:
 
 jobs:
   setup:
-    uses: ./.github/workflows/common/setup.yml
+    uses: ./.github/workflows/setup.workflow.yml
     with:
       cache-key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
       fetch-depth: 0
@@ -17,7 +17,7 @@ jobs:
     steps:
       - id: test-visual-composition
         name: Test Visual and Composition
-        uses: ./.github/workflows/common/chromatic.yml
+        uses: ./.github/workflows/chromatic.workflow.yml
 
   # Run interaction and accessibility tests
   interaction-and-accessibility:
@@ -40,4 +40,4 @@ jobs:
     steps:
       - id: test-user-flow
         name: Test User Flow
-        uses: ./.github/workflows/common/cypress.yml
+        uses: ./.github/workflows/cypress.workflow.yml

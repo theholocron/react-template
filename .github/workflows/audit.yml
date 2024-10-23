@@ -8,7 +8,7 @@ on:
 
 jobs:
   setup:
-    uses: ./.github/workflows/common/setup.yml
+    uses: ./.github/workflows/setup.workflow.yml
     with:
       cache-key: ${{ runner.os }}-npm-v1-${{ hashFiles('**/package-lock.json') }}
 
@@ -18,4 +18,4 @@ jobs:
     steps:
       - id: audit-bundle-size
         name: Check bundle size
-        uses: ./.github/workflows/common/bundlewatch.yml
+        uses: ./.github/workflows/bundlewatch.workflow.yml
