@@ -9,8 +9,20 @@ jobs:
     name: Review PRs
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        name: Checkout repository
+
+      - uses: actions/setup-node@v4
+        name: Setup Node.js @v20
+        with:
+          cache: npm
+          node-version: 20.x
+
+      - run: npm ci
+        name: Install dependencies
+
       - uses: reviewdog/action-setup@v1
-        name: Setup Review
+        name: Install & setup ReviewDog
         with:
           reviewdog_version: latest # Optional. [latest,nightly,v.X.Y.Z]
 
