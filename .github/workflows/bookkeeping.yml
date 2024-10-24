@@ -28,6 +28,9 @@ jobs:
           cache: npm
           node-version: 20.x
 
+      - run: npm ci
+        name: Install dependencies
+
       - uses: brown-ccv/alex-recommends@v1.2.1
         name: Comment on new PR
         with:
