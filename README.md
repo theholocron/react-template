@@ -1,6 +1,6 @@
-# react-template
+# React Template
 
-<description> used within the Galaxy.
+A React template used within the Galaxy.
 
 ## Installation
 
@@ -10,11 +10,19 @@ npm install --save-dev @theholocron/react-template
 
 ## Usage
 
-<!-- fill out the usage with examples -->
+```typescript
+import { Component, type ComponentProps } from "@theholocron/react-template";
+
+function App (props: ComponentProps) {
+	return (
+		<Component {...props} />
+	);
+}
+```
 
 ## Documentation
 
-<!-- document the api(s), or how to use with examples -->
+The best way to find out what's available is to check out the [documentation site](https://docs.theholocron.dev/react-template/), but if you like digging through source code, then each component is typed via TypeScript.
 
 **Note**
 
