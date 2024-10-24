@@ -3,8 +3,8 @@ documentation:
 - any:
   - changed-files:
     - any-glob-to-any-file:
-      - docs/*
-      - '**/*.md'
+      - docs/**
+      - "**/*.md"
 
 # Add "bug" label to any PR where the head branch name starts with `fix` with file changes to src directory
 bug:
