@@ -4,7 +4,21 @@ on:
   - pull_request_target
 
 jobs:
-  alex:
+  label:
+    name: Add Labels
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout repository
+
+      - uses: actions/labeler@v5
+        with:
+          sync-labels: true
+
+  check-language:
     name: Check language
     runs-on: ubuntu-latest
     steps:
