@@ -27,4 +27,4 @@ release:
 - all:
   - changed-files:
     - any-glob-to-any-file: .changeset/*
-    - base-branch: "main"
+  - base-branch: "main"
