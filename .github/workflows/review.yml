@@ -29,42 +29,46 @@ jobs:
       - uses: reviewdog/action-gitleaks@v1
         name: Detect secrets using Gitleaks
         with:
-          reporter: github-pr-review
+          reporter: github-pr-check
 
       - uses: reviewdog/action-alex@v1
         name: Check language using Alex
         with:
-          reporter: github-pr-review # [github-pr-check,github-check,github-pr-review]
+          reporter: github-pr-check # [github-pr-check,github-check,github-pr-review]
           # GitHub Status Check won't become failure with warning.
           # level: warning # [info,warning, error]
 
       - uses: EPMatt/reviewdog-action-tsc@v1
         name: Check types using TypeScript
         with:
-          reporter: github-pr-review
+          reporter: github-pr-check
 
       - uses: reviewdog/action-stylelint@v1
         name: Check CSS using StyleLint
         with:
-          reporter: github-pr-review
+          reporter: github-pr-check
           stylelint_input: '**/*.css'
 
-      - uses: tsuyoshicho/action-textlint@v3
-        name: Check text using TextLint
-        with:
-          reporter: github-pr-review
+      # need to setup textlint in the repo for this
+      # - uses: tsuyoshicho/action-textlint@v3
+      #   name: Check text using TextLint
+      #   with:
+      #     reporter: github-pr-check
 
-      - uses: reviewdog/action-actionlint@v1
-        name: Check GitHub Actions using ActionLint
-        with:
-          reporter: github-pr-review
+      # need to setup actionlint in the repo for this
+      # - uses: reviewdog/action-actionlint@v1
+      #   name: Check GitHub Actions using ActionLint
+      #   with:
+      #     reporter: github-pr-check
 
-      - uses: dotenv-linter/action-dotenv-linter@v2
-        name: Check environment variables using dotenv
-        with:
-          reporter: github-code-suggestions
+      # need to setup dotenv-linter in the repo for this
+      # - uses: dotenv-linter/action-dotenv-linter@v2
+      #   name: Check environment variables using dotenv
+      #   with:
+      #     reporter: github-code-suggestions
 
-      - uses: reviewdog/action-yamllint@v1
-        name: Check YAML using YamlLint
-        with:
-          reporter: github-pr-review
+      # need to setup yamllint in the repo for this
+      # - uses: reviewdog/action-yamllint@v1
+      #   name: Check YAML using YamlLint
+      #   with:
+      #     reporter: github-pr-check
