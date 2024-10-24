@@ -1,11 +1,11 @@
-name: Label
+name: PR Bookkeeping
 
 on:
   - pull_request_target
 
 jobs:
   label:
-    name: Label Pull Requests
+    name: Add Labels
     permissions:
       contents: read
       pull-requests: write

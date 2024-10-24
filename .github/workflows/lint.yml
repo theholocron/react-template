@@ -34,6 +34,8 @@ jobs:
         name: Run Super Linter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANNOTATE_ONLY: true  # Allow annotations in the PR
+          DISABLE_COMMENTS: false  # Enable comments in the PR
           IGNORE_GITIGNORED_FILES: true
           LINTER_RULES_PATH: /
           CSS_FILE_NAME: "stylelint.config.js"

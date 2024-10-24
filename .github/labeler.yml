@@ -1,3 +1,4 @@
+
 # Add "documentation" label to any changes within "docs" folder or any subfolders or .md files within the entire repository
 documentation:
 - any:
@@ -11,14 +12,16 @@ bug:
 - all:
   - changed-files:
     - any-glob-to-any-file: src/*
-    - head-branch: "^fix-"
+  - head-branch:
+    - "^fix-"
 
 # Add "enhancement" label to any PR where the head branch name starts with `feat` with file changes to src directory
 enhancement:
 - all:
   - changed-files:
     - any-glob-to-any-file: src/*
-    - head-branch: "^feat-"
+  - head-branch:
+    - "^feat-"
 
 # Add "release" label to any PR that is opened against the `main` branch
 release:
