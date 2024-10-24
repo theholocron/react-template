@@ -3,7 +3,7 @@
  * @type {import("stylelint").Config}
  */
 const config = {
-	extends: ["@theholocron"],
+	extends: ["@theholocron/stylelint-config"],
 };
 
 export default config;
