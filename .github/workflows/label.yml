@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/labeler@v5
+
   alex:
     name: Check language
     runs-on: ubuntu-latest
