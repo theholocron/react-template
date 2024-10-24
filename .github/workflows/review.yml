@@ -1,0 +1,57 @@
+name: Review
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  reviewdog:
+    name: Review PRs
+    steps:
+      - uses: reviewdog/action-setup@v1
+        name: Setup Review
+        with:
+          reviewdog_version: latest # Optional. [latest,nightly,v.X.Y.Z]
+
+      - uses: reviewdog/action-gitleaks@v1
+        name: Detect secrets using Gitleaks
+        with:
+          reporter: github-pr-review
+
+      - uses: reviewdog/action-alex@v1
+        name: Check language using Alex
+        with:
+          reporter: github-pr-review # [github-pr-check,github-check,github-pr-review]
+          # GitHub Status Check won't become failure with warning.
+          # level: warning # [info,warning, error]
+
+      - uses: EPMatt/reviewdog-action-tsc@v1
+        name: Check types using TypeScript
+        with:
+          reporter: github-pr-review
+
+      - uses: reviewdog/action-stylelint@v1
+        name: Check CSS using StyleLint
+        with:
+          reporter: github-pr-review
+          stylelint_input: '**/*.css'
+
+      - uses: tsuyoshicho/action-textlint@v3
+        name: Check text using TextLint
+        with:
+          reporter: github-pr-review
+
+      - uses: reviewdog/action-actionlint@v1
+        name: Check GitHub Actions using ActionLint
+        with:
+          reporter: github-pr-review
+
+      - uses: dotenv-linter/action-dotenv-linter@v2
+        name: Check environment variables using dotenv
+        with:
+          reporter: github-code-suggestions
+
+      - uses: reviewdog/action-yamllint@v1
+        name: Check YAML using YamlLint
+        with:
+          reporter: github-pr-review
