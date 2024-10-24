@@ -12,5 +12,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/labeler@v5
+  alex:
+    name: Check language
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout repository
         with:
-          sync-labels: true
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        name: Setup Node.js @v20
+        with:
+          cache: npm
+          node-version: 20.x
+
+      - uses: brown-ccv/alex-recommends@v1.2.1
+        name: Comment on new PR
+        with:
+          message_id: 'alex'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
