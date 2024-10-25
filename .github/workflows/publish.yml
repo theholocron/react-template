@@ -1,4 +1,4 @@
-name: Version
+name: Publish
 
 # @TODO: check if this could replace changesets
 # if so, i can get rid of the publish command and changesets
