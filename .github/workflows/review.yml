@@ -55,11 +55,10 @@ jobs:
       #   with:
       #     reporter: github-pr-check
 
-      # need to setup actionlint in the repo for this
-      # - uses: reviewdog/action-actionlint@v1
-      #   name: Check GitHub Actions using ActionLint
-      #   with:
-      #     reporter: github-pr-check
+      - uses: reviewdog/action-actionlint@v1
+        name: Check GitHub Actions using ActionLint
+        with:
+          reporter: github-pr-check
 
       # need to setup dotenv-linter in the repo for this
       # - uses: dotenv-linter/action-dotenv-linter@v2
