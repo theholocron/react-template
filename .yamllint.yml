@@ -12,4 +12,7 @@ rules:
     ignore: |
       .github/*.yml
 
+  indentation:
+    spaces: 2
+
   line-length: disable
