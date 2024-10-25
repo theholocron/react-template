@@ -5,8 +5,9 @@ extends: default
 rules:
   comments:
     min-spaces-from-content: 1
+    require-starting-space: true
 
-  comments-indentation: disable
+  comments-indentation: {}
 
   document-start:
     ignore: |
