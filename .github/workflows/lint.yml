@@ -78,7 +78,7 @@ jobs:
           VALIDATE_TYPESCRIPT_PRETTIER: true
           VALIDATE_YAML: true # turning on for now while prettier is broken
           # VALIDATE_YAML_PRETTIER: true => turning it off because its writing 4 spaces instead of 2
-          YAML_CONFIG_FILE: ".yamllint.yml"
+          YAML_CONFIG_FILE: "yamllint.config.yml"
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         name: Commit and push linting fixes

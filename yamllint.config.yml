@@ -13,6 +13,6 @@ rules:
       .github/*.yml
 
   indentation:
-    spaces: 2
+    spaces: consistent
 
   line-length: disable
