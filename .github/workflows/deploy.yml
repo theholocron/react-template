@@ -1,6 +1,6 @@
 name: Deploy
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     branches:
       - main
@@ -26,4 +26,3 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deploy-github-pages.outputs.page_url }}
-
