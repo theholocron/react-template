@@ -51,7 +51,7 @@ jobs:
           FIX_TSX: true
           FIX_TYPESCRIPT_PRETTIER: true
           # FIX_YAML_PRETTIER: true => turning this off til i figure out why its not respecting config
-          # GITHUB_ACTIONS_CONFIG_FILE: "actionlint.yml"
+          # GITHUB_ACTIONS_CONFIG_FILE: "actionlint.yml" => basically unneeded
           # GITLEAKS_CONFIG: ".gitleaks.toml" # Path to your Gitleaks config if you have one
           JAVASCRIPT_ES_CONFIG_FILE: "eslint.config.js"
           # MARKDOWN_CONFIG_FILE: ".markdown-lint.yml"
