@@ -2,10 +2,9 @@
 
 ## [0.2.1](https://github.com/theholocron/react-template/compare/v0.2.0...v0.2.1) (2024-10-25)
 
-
 ### Bug Fixes
 
-* 💚 enable publish to npm, gh ([#12](https://github.com/theholocron/react-template/issues/12)) ([a2fed19](https://github.com/theholocron/react-template/commit/a2fed19a61e8384574c5cec85c6f2591177f554b))
+-   💚 enable publish to npm, gh ([#12](https://github.com/theholocron/react-template/issues/12)) ([a2fed19](https://github.com/theholocron/react-template/commit/a2fed19a61e8384574c5cec85c6f2591177f554b))
 
 ## [0.2.0](https://github.com/theholocron/react-template/compare/v0.1.0...v0.2.0) (2024-10-25)
 
