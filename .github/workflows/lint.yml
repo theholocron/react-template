@@ -55,7 +55,7 @@ jobs:
           # GITLEAKS_CONFIG: ".gitleaks.toml" # Path to your Gitleaks config if you have one
           JAVASCRIPT_ES_CONFIG_FILE: "eslint.config.js"
           # MARKDOWN_CONFIG_FILE: ".markdown-lint.yml"
-          # NATURAL_LANGUAGE_CONFIG_FILE: "textlint.config.js"
+          NATURAL_LANGUAGE_CONFIG_FILE: "textlint.config.js"
           PRETTIER_CONFIG: "prettier.config.js"
           TYPESCRIPT_ES_CONFIG_FILE: "eslint.config.js"
           TYPESCRIPT_STANDARD_TSCONFIG_FILE: "tsconfig.json"
