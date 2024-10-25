@@ -1,5 +1,10 @@
 name: Audit
 
+# @TODO: add in more things like:
+# - [ ] performance checks (using yellowpages, googles tools, etc)
+# - [ ] dead css checks
+# - [ ] coverage drops
+
 on:
   pull_request:
     types:

@@ -8,8 +8,8 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  npm:
-    name: Publish to NPM
+  changeset-release:
+    name: Create a release
     permissions:
       contents: write # to create release
       issues: write # to post issue comments
@@ -26,22 +26,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  github-pages:
-    name: Publish Storybook to GitHub Pages
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
-        id: deploy-github-pages
-        name: Publish Storybook to GitHub Pages
-        with:
-          build_command: npm run build:storybook
-          install_command: npm ci
-          path: storybook-static
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy-github-pages.outputs.page_url }}
