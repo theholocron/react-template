@@ -10,5 +10,6 @@ rules:
 
   document-start:
     ignore: |
-      /.github/*.yml
+      .github/*.yml
 
+  line-length: disable

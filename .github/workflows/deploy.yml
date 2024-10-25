@@ -26,4 +26,3 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deploy-github-pages.outputs.page_url }}
-
