@@ -7,7 +7,7 @@
 * 💚 add in review checks ([#4](https://github.com/theholocron/react-template/issues/4)) ([363e26e](https://github.com/theholocron/react-template/commit/363e26eef7199ed4f0957fbce9679892aab222fb))
 * add storybook ([#2](https://github.com/theholocron/react-template/issues/2)) ([77229d6](https://github.com/theholocron/react-template/commit/77229d633b3d29b9e1d4ccf305049e8016966eca))
 
-### Bug Fixes
+### Fixes
 
 * 💚 more syntax issues with audit workflow ([82fd2e2](https://github.com/theholocron/react-template/commit/82fd2e2ed45838c582f27bd10fdc276f0efc2bd5))
 * 💚 release build for versioning ([#7](https://github.com/theholocron/react-template/issues/7)) ([0cf3126](https://github.com/theholocron/react-template/commit/0cf31265169f48de4f579a3cfb9c07930a149f1d))
