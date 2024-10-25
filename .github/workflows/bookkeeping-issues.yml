@@ -7,7 +7,7 @@ name: Issues Bookkeeping
 # - [ ] cleans up language
 # - [ ] checks that template is filled out
 
-on:
+on: # yamllint disable-line rule:truthy
   issues:
     types:
       - opened

@@ -5,7 +5,7 @@ name: Audit
 # - [ ] dead css checks
 # - [ ] coverage drops
 
-on:
+on: # yamllint disable-line rule:truthy
   pull_request:
     types:
       - synchronize
