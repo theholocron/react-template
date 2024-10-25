@@ -60,14 +60,12 @@ jobs:
         with:
           reporter: github-pr-check
 
-      # need to setup dotenv-linter in the repo for this
-      # - uses: dotenv-linter/action-dotenv-linter@v2
-      #   name: Check environment variables using dotenv
-      #   with:
-      #     reporter: github-code-suggestions
+      - uses: dotenv-linter/action-dotenv-linter@v2
+        name: Check environment variables using dotenv
+        with:
+          reporter: github-code-suggestions
 
-      # need to setup yamllint in the repo for this
-      # - uses: reviewdog/action-yamllint@v1
-      #   name: Check YAML using YamlLint
-      #   with:
-      #     reporter: github-pr-check
+      - uses: reviewdog/action-yamllint@v1
+        name: Check YAML using YamlLint
+        with:
+          reporter: github-pr-check
