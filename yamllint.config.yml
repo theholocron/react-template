@@ -14,5 +14,6 @@ rules:
 
   indentation:
     spaces: consistent
+    indent-sequences: consistent
 
   line-length: disable
