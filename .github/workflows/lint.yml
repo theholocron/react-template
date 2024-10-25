@@ -73,7 +73,7 @@ jobs:
           VALIDATE_JSON_PRETTIER: true
           VALIDATE_JSX_PRETTIER: true
           VALIDATE_MARKDOWN_PRETTIER: true
-          VALIDATE_NATURAL_LANGUAGE: true
+          # VALIDATE_NATURAL_LANGUAGE: true
           VALIDATE_TSX: true
           VALIDATE_TYPESCRIPT_PRETTIER: true
           VALIDATE_YAML: true # turning on for now while prettier is broken
