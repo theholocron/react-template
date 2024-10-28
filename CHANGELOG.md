@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/theholocron/react-template/compare/v0.2.1...v0.2.2) (2024-10-28)
+
+
+### Bug Fixes
+
+* 💚 add in yamllint ([#18](https://github.com/theholocron/react-template/issues/18)) ([1a5d267](https://github.com/theholocron/react-template/commit/1a5d267d7ee03c785a693cb84c118c638e839da7))
+
 ## [0.2.1](https://github.com/theholocron/react-template/compare/v0.2.0...v0.2.1) (2024-10-25)
 
 ### Bug Fixes
