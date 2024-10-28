@@ -69,3 +69,4 @@ jobs:
         name: Check YAML using YamlLint
         with:
           reporter: github-pr-check
+          yamllint_flags: "-c ${{ github.workspace }}/yamllint.config.yml ${{ github.workspace }}"
