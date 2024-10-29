@@ -1,3 +1,5 @@
+<!-- @generated -->
+
 # Changelog
 
 ## [0.2.1](https://github.com/theholocron/react-template/compare/v0.2.0...v0.2.1) (2024-10-25)
