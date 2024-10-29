@@ -3,6 +3,13 @@
 
 # Changelog
 
+## [0.2.3](https://github.com/theholocron/react-template/compare/v0.2.2...v0.2.3) (2024-10-29)
+
+
+### Bug Fixes
+
+* 👷 remove changesets ([#20](https://github.com/theholocron/react-template/issues/20)) ([c3bc4af](https://github.com/theholocron/react-template/commit/c3bc4af54ead84b98fb98e18d77ed4904ac90356))
+
 ## [0.2.2](https://github.com/theholocron/react-template/compare/v0.2.1...v0.2.2) (2024-10-28)
 
 
