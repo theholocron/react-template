@@ -1,4 +1,5 @@
 <!-- @generated -->
+<!-- prettier-ignore -->
 
 # Changelog
 
