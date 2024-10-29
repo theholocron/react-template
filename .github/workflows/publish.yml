@@ -42,7 +42,7 @@ jobs:
         name: Install dependencies
 
       - run: npm publish
-        name: Publish to NPM
+        name: Publish to GitHub
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 

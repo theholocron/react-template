@@ -1,3 +1,6 @@
+<!-- @generated -->
+<!-- prettier-ignore -->
+
 # Changelog
 
 ## [0.2.2](https://github.com/theholocron/react-template/compare/v0.2.1...v0.2.2) (2024-10-28)

@@ -47,7 +47,7 @@ jobs:
           FIX_JAVASCRIPT_PRETTIER: true
           # FIX_JSON_PRETTIER: true => turning this off til i figure out why its not respecting config
           FIX_JSX_PRETTIER: true
-          FIX_MARKDOWN_PRETTIER: true
+          # FIX_MARKDOWN_PRETTIER: true
           FIX_TSX: true
           FIX_TYPESCRIPT_PRETTIER: true
           # FIX_YAML_PRETTIER: true => turning this off til i figure out why its not respecting config
@@ -72,7 +72,7 @@ jobs:
           VALIDATE_JAVASCRIPT_PRETTIER: true
           VALIDATE_JSON_PRETTIER: true
           VALIDATE_JSX_PRETTIER: true
-          VALIDATE_MARKDOWN_PRETTIER: true
+          # VALIDATE_MARKDOWN_PRETTIER: true => disabling because its annoying and doesn't respect anything
           # VALIDATE_NATURAL_LANGUAGE: true
           VALIDATE_TSX: true
           VALIDATE_TYPESCRIPT_PRETTIER: true

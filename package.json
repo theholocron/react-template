@@ -52,7 +52,6 @@
     "build:storybook": "storybook build",
     "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
     "preview": "vite preview",
-    "release": "changeset",
     "start": "storybook dev -p 6006",
     "test": "vitest",
     "test:cypress": "cypress open",
@@ -63,8 +62,6 @@
     "npm": ">=10"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.9",
     "@theholocron/commitlint-config": "^3.4.4",
     "@theholocron/eslint-config": "^3.4.4",
     "@theholocron/jest-config": "^3.4.4",
