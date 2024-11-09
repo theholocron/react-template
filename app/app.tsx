@@ -1,6 +1,4 @@
-import { Inbox } from "../inbox";
-import { Login } from "../login";
-import { useAuth } from "./use-auth";
+import { Inbox, Login, useAuth } from "../src/";
 import "./app.css";
 
 export function App () {

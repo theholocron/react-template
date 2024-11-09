@@ -4,6 +4,32 @@ on: # yamllint disable-line rule:truthy
   - push
 
 jobs:
+  unit:
+    name: Run tests and collect coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout repository
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        name: Setup Node.js @v20
+        with:
+          cache: npm
+          node-version: 20.x
+
+      - run: npm ci
+        name: Install dependencies
+
+      - run: npm test -- --coverage
+        name: Run tests with coverage
+
+      - uses: codecov/codecov-action@v4
+        name: Upload results to Codecov
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
   # Run visual and composition tests with Chromatic
   visual-and-composition:
     name: Test Visual and Composition

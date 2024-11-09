@@ -1,4 +1,4 @@
-import * as TaskStories from "./task.story";
+import TaskStories from "./task.story";
 import { TaskList } from "./task-list";
 
 export default {

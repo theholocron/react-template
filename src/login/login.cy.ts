@@ -28,7 +28,7 @@ describe("The Login Page", () => {
 		cy.visit("/");
 
 		// Fill out the form with typed values
-		cy.get("input[name=email]").type(email);
+		cy.get("input[name=username]").type(email);
 		cy.get("input[name=password]").type(password);
 
 		// Click the sign-in button

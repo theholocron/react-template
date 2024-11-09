@@ -1,3 +1,5 @@
+"use client";
+
 import { Task, type TaskProps } from "./task";
 
 export interface TaskListProps {

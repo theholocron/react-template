@@ -1,4 +1,4 @@
-import { Task } from "./task";
+import { Task, type TaskProps } from "./task";
 
 export default {
 	component: Task,
@@ -12,7 +12,7 @@ export default {
 };
 
 export const Default = {
-	render: (args) => (
+	render: (args: TaskProps) => (
 		<ul>
 			<Task {...args} />
 		</ul>
@@ -27,7 +27,7 @@ export const Default = {
 };
 
 export const Pinned = {
-	render: (args) => (
+	render: (args: TaskProps) => (
 		<ul>
 			<Task {...args} />
 		</ul>
@@ -42,7 +42,7 @@ export const Pinned = {
 };
 
 export const Archived = {
-	render: (args) => (
+	render: (args: TaskProps) => (
 		<ul>
 			<Task {...args} />
 		</ul>
@@ -59,7 +59,7 @@ export const Archived = {
 const longTitleString = `This task's name is absurdly large. In fact, I think if I keep going I might end up with content overflow. What will happen? The star that represents a pinned task could have text overlapping. The text could cut-off abruptly when it reaches the star. I hope not!`;
 
 export const LongTitle = {
-	render: (args) => (
+	render: (args: TaskProps) => (
 		<ul>
 			<Task {...args} />
 		</ul>

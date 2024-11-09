@@ -55,7 +55,8 @@
     "start": "storybook dev -p 6006",
     "test": "vitest",
     "test:cypress": "cypress open",
-    "test:storybook": "test-storybook --coverage"
+    "test:storybook": "test-storybook --coverage",
+    "prepare": "husky"
   },
   "engines": {
     "node": ">=23",

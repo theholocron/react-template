@@ -22,7 +22,7 @@ jobs:
         with:
           build_command: npm run build:storybook
           install_command: npm ci
-          path: storybook-static
+          path: docs
     environment:
       name: github-pages
       url: ${{ steps.deploy-github-pages.outputs.page_url }}
