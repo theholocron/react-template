@@ -11,6 +11,7 @@ const config: StorybookConfig = {
 		"@storybook/addon-links",
 		"@chromatic-com/storybook",
 		"@whitespace/storybook-addon-html",
+		"@codesandbox/storybook-addon",
 	],
 	docs: {
 		defaultName: "Documentation",
@@ -23,7 +24,7 @@ const config: StorybookConfig = {
 	staticDirs: ["../public"],
 	stories: ["../src/**/*.mdx", "../src/**/*.story.@(js|jsx|mjs|ts|tsx)"],
 	// @TODO: abstract out to shared vite.config.ts
-	async viteFinal(config, options) {
+	async viteFinal(config) {
 		return mergeConfig(config, {
 			resolve: {
 				alias: {

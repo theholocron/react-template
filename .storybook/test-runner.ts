@@ -12,5 +12,11 @@ export default {
 				html: true,
 			},
 		});
+
+		// snapshot testing
+		// the #storybook-root element wraps the story.
+		const elementHandler = await page.$("#storybook-root");
+		const innerHTML = await elementHandler.innerHTML();
+		expect(innerHTML).toMatchSnapshot();
 	},
 };

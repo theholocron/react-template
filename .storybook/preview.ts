@@ -11,6 +11,11 @@ const preview: Preview = {
 	layout: "centered",
 	loaders: [mswLoader],
 	parameters: {
+		codesandbox: {
+			apiToken: process.env.STORYBOOK_CODE_SANDBOX_API_TOKEN,
+			template: "react",
+			privacy: "public",
+		},
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
