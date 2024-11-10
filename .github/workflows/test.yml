@@ -22,7 +22,7 @@ jobs:
       - run: npm ci
         name: Install dependencies
 
-      - run: npm test -- --coverage
+      - run: npm run test-storybook -- --coverage
         name: Run tests with coverage
 
       - uses: codecov/codecov-action@v4

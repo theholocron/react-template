@@ -1,12 +1,16 @@
 {
   "name": "@theholocron/react-template",
+  "version": "0.2.3",
   "description": "<description>",
   "homepage": "https://github.com/theholocron/react-template#readme",
+  "bugs": "https://github.com/theholocron/react-template/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theholocron/react-template.git"
+  },
+  "license": "GPL-3.0",
   "author": "Newton Koumantzelis",
-  "main": "dist/react-template.cjs.js",
-  "module": "dist/react-template.es.js",
-  "style": "dist/style.css",
-  "types": "dist/index.d.ts",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/react-template.es.js",
@@ -14,53 +18,24 @@
     },
     "./style": "./dist/style.css"
   },
+  "main": "dist/react-template.cjs.js",
+  "module": "dist/react-template.es.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/style.css",
   "files": [
     "dist/*"
   ],
-  "type": "module",
-  "version": "0.2.3",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/theholocron/react-template.git"
-  },
-  "bugs": "https://github.com/theholocron/react-template/issues",
-  "releases": "https://github.com/theholocron/react-template/releases",
-  "wiki": "https://github.com/theholocron/react-template/wiki",
-  "license": "GPL-3.0",
-  "packageManager": "npm@9.5.0",
-  "bundlewatch": {
-    "files": [
-      {
-        "path": "./dist/**/*.css",
-        "maxSize": "50 kB"
-      },
-      {
-        "path": "./dist/**/*.js",
-        "maxSize": "100 kB"
-      }
-    ]
-  },
-  "msw": {
-    "workerDirectory": "public"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
     "build:storybook": "storybook build",
+    "dev": "vite",
     "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
+    "prepare": "husky",
     "preview": "vite preview",
     "start": "storybook dev -p 6006",
     "test": "vitest",
     "test:cypress": "cypress open",
-    "test:storybook": "test-storybook --coverage",
-    "prepare": "husky"
-  },
-  "engines": {
-    "node": ">=23",
-    "npm": ">=10"
+    "test:storybook": "test-storybook"
   },
   "devDependencies": {
     "@theholocron/commitlint-config": "^3.4.4",
@@ -81,5 +56,30 @@
   "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
-  }
+  },
+  "packageManager": "npm@9.5.0",
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "./dist/**/*.css",
+        "maxSize": "50 kB"
+      },
+      {
+        "path": "./dist/**/*.js",
+        "maxSize": "100 kB"
+      }
+    ]
+  },
+  "msw": {
+    "workerDirectory": "public"
+  },
+  "releases": "https://github.com/theholocron/react-template/releases",
+  "wiki": "https://github.com/theholocron/react-template/wiki"
 }
