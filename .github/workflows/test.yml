@@ -22,7 +22,10 @@ jobs:
       - run: npm ci
         name: Install dependencies
 
-      - run: npm run test:storybook -- --coverage
+      - run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+          "npx http-server docs --port 6006 --silent" \
+          "npx wait-on tcp:6006 && npm run test:storybook -- --coverage"
         name: Run tests with coverage
 
       - uses: codecov/codecov-action@v4
@@ -83,7 +86,7 @@ jobs:
 
       - run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-          "npx http-server storybook-static --port 6006 --silent" \
+          "npx http-server docs --port 6006 --silent" \
           "npx wait-on tcp:6006 && npm run test:storybook"
         name: Serve Storybook and run tests
 
