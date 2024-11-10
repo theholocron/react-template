@@ -1,9 +1,9 @@
 name: Publish
 
 on: # yamllint disable-line rule:truthy
-  push:
-    branches:
-      - main
+  release:
+    types:
+      - published
 
 permissions:
   contents: write
@@ -11,22 +11,9 @@ permissions:
   pull-requests: write
 
 jobs:
-  release:
-    name: Version using Semantic Versioning
-    runs-on: ubuntu-latest
-    steps:
-      - uses: googleapis/release-please-action@v4
-        id: release
-        with:
-          release-type: node
-          # The short ref name of the branch or tag that triggered
-          #  the workflow run. For example, `main` or `1.x`
-          target-branch: ${{ github.ref_name }}
-
   publish-npm:
     name: Publish to NPM
     runs-on: ubuntu-latest
-    needs: release
     steps:
       - uses: actions/checkout@v4
         name: Checkout repository
@@ -49,7 +36,6 @@ jobs:
   publish-gh:
     name: Publish to GitHub
     runs-on: ubuntu-latest
-    needs: release
     steps:
       - uses: actions/checkout@v4
         name: Checkout repository

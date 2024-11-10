@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export interface Task {
+interface Task {
 	id: string;
 	title: string;
 	state: "TASK_INBOX" | "TASK_PINNED" | "TASK_ARCHIVED";

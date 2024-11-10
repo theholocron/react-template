@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Run GitLeaks to detect secrets
-gitleaks git --no-banner
+gitleaks git -v --log-opts="--diff-filter=ACM" --no-banner
 
 # Exit with non-zero if secrets are detected by GitLeaks
 if [ $? -ne 0 ]; then
