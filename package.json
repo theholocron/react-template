@@ -46,6 +46,7 @@
     "@storybook/addon-interactions": "^8.4.2",
     "@storybook/addon-links": "^8.4.2",
     "@storybook/react-vite": "^8.6.14",
+    "@storybook/test": "^8.6.14",
     "@theholocron/commitlint-config": "^3.5.1",
     "@theholocron/eslint-config": "^3.5.1",
     "@theholocron/jest-config": "^3.5.1",
