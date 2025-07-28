@@ -56,6 +56,25 @@ export default defineConfig({
 						headless: true,
 						instances: [{ browser: "chromium" }],
 					},
+					coverage: {
+						provider: "v8",
+						reportsDirectory: "./coverage",
+						reporter: ["text", "lcov"],
+						include: ["src/**/*.{ts,tsx}"], // ✅ Only include actual source files
+						exclude: [
+							"**/*.test.*",
+							"**/*.spec.*",
+							"**/mocks/**",
+							"**/__tests__/**",
+							"**/index.ts", // Optional: often just re-exports
+							"**/public/**",
+							"**/node_modules/**",
+							"**/vite.config.ts",
+							"**/vitest.config.ts",
+							"**/*.config.js",
+							"**/*.cy.ts", // ✅ Exclude Cypress tests
+						],
+					},
 					globals: true,
 					setupFiles: ["./.storybook/vitest.setup.ts"],
 				},
