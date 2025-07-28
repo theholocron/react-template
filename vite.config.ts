@@ -42,7 +42,7 @@ export default defineConfig({
 						configDir: path.join(__dirname, ".storybook"),
 						// This should match your package.json script to run Storybook
 						// The --ci flag will skip prompts and not open a browser
-						storybookScript: "npm storybook dev --ci",
+						storybookScript: "npm start --ci",
 					}),
 				],
 				test: {
