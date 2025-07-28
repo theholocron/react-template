@@ -7,6 +7,11 @@ jobs:
   unit:
     name: Run tests and collect coverage
     runs-on: ubuntu-latest
+    container:
+      # Make sure to grab the latest version of the Playwright image
+      # https://playwright.dev/docs/docker#pull-the-image
+      image: mcr.microsoft.com/playwright:v1.52.0-noble
+
     steps:
       - uses: actions/checkout@v4
         name: Checkout repository
@@ -23,11 +28,10 @@ jobs:
       - run: npm ci
         name: Install dependencies
 
-      - run: npx playwright install --with-deps
-        name: Install Playwright
-
       - run: npm run test:storybook -- --coverage
         name: Run tests with coverage
+        env:
+          SB_URL: '${{ github.event.deployment_status.environment_url }}'
 
       - uses: codecov/codecov-action@v4
         name: Upload results to Codecov
@@ -65,6 +69,10 @@ jobs:
   interaction-and-accessibility:
     name: Test Interactions and Accessibility
     runs-on: ubuntu-latest
+    container:
+      # Make sure to grab the latest version of the Playwright image
+      # https://playwright.dev/docs/docker#pull-the-image
+      image: mcr.microsoft.com/playwright:v1.52.0-noble
     steps:
       - uses: actions/checkout@v4
         name: Checkout repository
@@ -81,11 +89,10 @@ jobs:
       - run: npm ci
         name: Install dependencies
 
-      - run: npx playwright install --with-deps
-        name: Install Playwright
-
       - run: npm run test:storybook
         name: Serve Storybook and run tests
+        env:
+          SB_URL: '${{ github.event.deployment_status.environment_url }}'
 
   # Run user flow tests with Cypress
   user-flow:

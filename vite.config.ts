@@ -43,6 +43,7 @@ export default defineConfig({
 						// This should match your package.json script to run Storybook
 						// The --ci flag will skip prompts and not open a browser
 						storybookScript: "npm start --ci",
+						storybookUrl: process.env.SB_URL,
 					}),
 				],
 				test: {
