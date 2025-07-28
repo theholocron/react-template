@@ -1,14 +1,14 @@
-import { expect, userEvent, findByRole, within } from "@storybook/test";
+import { expect, userEvent, findByRole, within } from "storybook/test";
 import { taskListHandler, taskListErrorHandler } from "../tasks/handlers";
 import { Inbox } from "./inbox";
 
 export type CanvasElement = {
 	canvasElement: HTMLElement;
-}
+};
 
 export type CanvasInputElement = {
 	canvasElement: HTMLInputElement | HTMLTextAreaElement;
-}
+};
 
 export default {
 	component: Inbox,
@@ -18,7 +18,7 @@ export default {
 export const Default = {
 	parameters: {
 		msw: {
-			handlers: [ taskListHandler ],
+			handlers: [taskListHandler],
 		},
 	},
 };
@@ -29,7 +29,7 @@ export const Error = {
 	},
 	parameters: {
 		msw: {
-			handlers: [ taskListErrorHandler ],
+			handlers: [taskListErrorHandler],
 		},
 	},
 };

@@ -6,7 +6,7 @@ import { beforeAll } from "vitest";
 import { setProjectAnnotations } from "@storybook/react";
 // 👇 Import the exported annotations, if any, from the addons you're using; otherwise remove this
 // import * as addonAnnotations from "my-addon/preview";
-import * as previewAnnotations from "./.storybook/preview";
+import * as previewAnnotations from "./preview";
 
 const annotations = setProjectAnnotations([previewAnnotations]);
 

@@ -1,6 +1,7 @@
 import * as path from "node:path";
-import { defineConfig } from "vite";
+import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import react from "@vitejs/plugin-react";
+import { defineConfig } from "vitest/config";
 
 /*
  * @see https://vitejs.dev/config/
@@ -31,8 +32,33 @@ export default defineConfig({
 		},
 	},
 	test: {
-		globals: true,
-		environment: "jsdom", // Use jsdom for testing React components
-		setupFiles: "./test.setup.ts", // Optional setup file for additional configurations
+		extends: true,
+		// environment: "jsdom", // Use jsdom for testing React components
+		projects: [
+			{
+				plugins: [
+					storybookTest({
+						// The location of your Storybook config, main.js|ts
+						configDir: path.join(__dirname, ".storybook"),
+						// This should match your package.json script to run Storybook
+						// The --ci flag will skip prompts and not open a browser
+						storybookScript: "npm storybook dev --ci",
+					}),
+				],
+				test: {
+					name: "storybook",
+					// Enable browser mode
+					browser: {
+						enabled: true,
+						// Make sure to install Playwright
+						provider: "playwright",
+						headless: true,
+						instances: [{ browser: "chromium" }],
+					},
+					globals: true,
+					setupFiles: ["./.storybook/vitest.setup.ts"],
+				},
+			},
+		],
 	},
 });

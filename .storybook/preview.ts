@@ -1,5 +1,5 @@
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { type Preview } from "@storybook/react";
+import { INITIAL_VIEWPORTS } from "storybook/viewport";
 import { initialize, mswLoader } from "msw-storybook-addon";
 
 import "../app/app.css";
@@ -12,7 +12,7 @@ const preview: Preview = {
 	loaders: [mswLoader],
 	parameters: {
 		codesandbox: {
-			apiToken: process.env.STORYBOOK_CODE_SANDBOX_API_TOKEN,
+			apiToken: import.meta.env.VITE_STORYBOOK_CODE_SANDBOX_API_TOKEN,
 			template: "react",
 			privacy: "public",
 		},
