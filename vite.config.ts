@@ -77,6 +77,7 @@ export default defineConfig({
 							"**/*.cy.ts", // ✅ Exclude Cypress tests
 						],
 					},
+					environment: "jsdom",
 					globals: true,
 					setupFiles: ["./.storybook/vitest.setup.ts"],
 				},
