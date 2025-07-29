@@ -28,7 +28,7 @@ jobs:
       - run: npm ci
         name: Install dependencies
 
-      - run: npm run test:storybook -- --coverage
+      - run: npm test -- --coverage
         name: Run tests with coverage
         env:
           SB_URL: '${{ github.event.deployment_status.environment_url }}'
@@ -89,7 +89,7 @@ jobs:
       - run: npm ci
         name: Install dependencies
 
-      - run: npm run test:storybook
+      - run: npm test
         name: Serve Storybook and run tests
 
   # Run user flow tests with Cypress
