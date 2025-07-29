@@ -11,15 +11,8 @@ export interface TaskListProps {
 	onDeleteTask: TaskProps["onDeleteTask"];
 }
 
-export function TaskList (props: TaskListProps) {
-	const {
-		loading = false,
-		tasks,
-		onTogglePinTask,
-		onArchiveTask,
-		onEditTitle,
-		onDeleteTask,
-	} = props;
+export function TaskList(props: TaskListProps) {
+	const { loading = false, tasks, onTogglePinTask, onArchiveTask, onEditTitle, onDeleteTask } = props;
 
 	const events = {
 		onTogglePinTask,
@@ -29,7 +22,7 @@ export function TaskList (props: TaskListProps) {
 	};
 
 	const LoadingRow = (
-		<div className="loading-item">
+		<div className="loading-item" data-testid="loading-item">
 			<span className="glow-checkbox" />
 			<span className="glow-text">
 				<span>Loading</span> <span>cool</span> <span>state</span>
@@ -39,7 +32,7 @@ export function TaskList (props: TaskListProps) {
 
 	if (loading) {
 		return (
-			<div className="list-items" data-testid="loading" key={"loading"}>
+			<div className="list-items" data-testid="loading" key="loading">
 				{LoadingRow}
 				{LoadingRow}
 				{LoadingRow}
@@ -68,13 +61,7 @@ export function TaskList (props: TaskListProps) {
 	];
 
 	return (
-		<div
-			className="list-items"
-			data-testid="success"
-			key={"success"}
-			role="list"
-			aria-label="tasks"
-		>
+		<div className="list-items" data-testid="success" key={"success"} role="list" aria-label="tasks">
 			{tasksInOrder.map((task) => (
 				<Task key={task.id} task={task} {...events} />
 			))}

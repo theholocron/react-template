@@ -1,3 +1,4 @@
+import { expect } from "storybook/test";
 import TaskStories from "./task.story";
 import { TaskList } from "./task-list";
 
@@ -47,6 +48,15 @@ export const Loading = {
 	args: {
 		tasks: [],
 		loading: true,
+	},
+	play: async ({ canvas }) => {
+		// Assert the loading state container is rendered
+		const loadingContainer = await canvas.findByTestId("loading");
+		await expect(loadingContainer).toBeInTheDocument();
+
+		// Check that there are exactly 6 loading items
+		const loadingItems = await canvas.findAllByTestId("loading-item");
+		await expect(loadingItems.length).toBe(6);
 	},
 };
 
