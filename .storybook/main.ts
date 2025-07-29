@@ -1,6 +1,4 @@
-import * as path from "node:path";
 import { type StorybookConfig } from "@storybook/react-vite";
-import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
 	addons: [
@@ -15,23 +13,26 @@ const config: StorybookConfig = {
 		// "@whitespace/storybook-addon-html",
 		// "@codesandbox/storybook-addon",
 	],
+	core: {
+		builder: "@storybook/builder-vite",
+		options: {
+			viteConfigPath: "../vite.config.ts",
+		},
+	},
 	docs: {
 		defaultName: "Documentation",
 	},
-	framework: {
-		name: "@storybook/react-vite",
-		// https://storybook.js.org/docs/api/main-config/main-config-framework
-		options: {},
-	},
+	framework: "@storybook/react-vite",
 	staticDirs: ["../public"],
 	stories: ["../src/**/*.mdx", "../src/**/*.story.@(js|jsx|mjs|ts|tsx)"],
-	// @TODO: abstract out to shared vite.config.ts
 	async viteFinal(config) {
+		// Merge custom configuration into the default config
+		const { mergeConfig } = await import("vite");
+
 		return mergeConfig(config, {
-			resolve: {
-				alias: {
-					"@": path.resolve(__dirname, "../src"), // Adjust the path based on your project structure
-				},
+			// Add dependencies to pre-optimization
+			optimizeDeps: {
+				include: ["storybook-dark-mode"],
 			},
 		});
 	},

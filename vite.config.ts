@@ -25,7 +25,7 @@ export default defineConfig({
 		},
 	},
 	optimizeDeps: {
-		include: ["react/jsx-dev-runtime", "@storybook/react", "@storybook/testing-react", "react-dom", "react-is"],
+		include: ["react/jsx-dev-runtime", "@storybook/react", "react-dom", "react-is"],
 	},
 	publicDir: "public",
 	plugins: [react()],
@@ -62,22 +62,7 @@ export default defineConfig({
 						provider: "v8",
 						reportsDirectory: "./coverage",
 						reporter: ["text", "lcov"],
-						include: ["src/**/*.{ts,tsx}"], // ✅ Only include actual source files
-						exclude: [
-							"**/*.test.*",
-							"**/*.spec.*",
-							"**/mocks/**",
-							"**/__tests__/**",
-							"**/index.ts", // Optional: often just re-exports
-							"**/public/**",
-							"**/node_modules/**",
-							"**/vite.config.ts",
-							"**/vitest.config.ts",
-							"**/*.config.js",
-							"**/*.cy.ts", // ✅ Exclude Cypress tests
-						],
 					},
-					environment: "jsdom",
 					globals: true,
 					setupFiles: ["./.storybook/vitest.setup.ts"],
 				},
