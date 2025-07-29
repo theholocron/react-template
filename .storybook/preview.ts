@@ -1,6 +1,6 @@
 import { type Preview } from "@storybook/react";
-import { INITIAL_VIEWPORTS } from "storybook/viewport";
 import { initialize, mswLoader } from "msw-storybook-addon";
+import { INITIAL_VIEWPORTS } from "storybook/viewport";
 
 import "../app/app.css";
 
@@ -11,11 +11,6 @@ const preview: Preview = {
 	layout: "centered",
 	loaders: [mswLoader],
 	parameters: {
-		codesandbox: {
-			apiToken: import.meta.env.VITE_STORYBOOK_CODE_SANDBOX_API_TOKEN,
-			template: "react",
-			privacy: "public",
-		},
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,

@@ -24,6 +24,9 @@ export default defineConfig({
 			},
 		},
 	},
+	optimizeDeps: {
+		include: ["react/jsx-dev-runtime", "@storybook/react", "@storybook/testing-react", "react-dom", "react-is"],
+	},
 	publicDir: "public",
 	plugins: [react()],
 	resolve: {
