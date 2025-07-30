@@ -32,7 +32,7 @@ const config: StorybookConfig = {
 		return mergeConfig(config, {
 			// Add dependencies to pre-optimization
 			optimizeDeps: {
-				include: ["storybook-dark-mode"],
+				include: ["react/jsx-dev-runtime", "react-dom/client"],
 			},
 		});
 	},

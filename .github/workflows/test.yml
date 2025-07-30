@@ -7,10 +7,10 @@ jobs:
   unit:
     name: Run tests and collect coverage
     runs-on: ubuntu-latest
-    container:
+    # container:
       # Make sure to grab the latest version of the Playwright image
       # https://playwright.dev/docs/docker#pull-the-image
-      image: mcr.microsoft.com/playwright:v1.54.1-noble
+      # image: mcr.microsoft.com/playwright:v1.54.1-noble
 
     steps:
       - uses: actions/checkout@v4
@@ -27,6 +27,9 @@ jobs:
 
       - run: npm ci
         name: Install dependencies
+
+      - run: npx playwright install chromium --with-deps
+        name: Install Playwright Dependencies
 
       - run: npm test -- --coverage
         name: Run tests with coverage
@@ -86,6 +89,9 @@ jobs:
 
       - run: npm ci
         name: Install dependencies
+
+      - run: npx playwright install chromium --with-deps
+        name: Install Playwright Dependencies
 
       - run: npm test
         name: Serve Storybook and run tests
