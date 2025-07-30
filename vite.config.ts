@@ -65,7 +65,7 @@ export default defineConfig({
 						reporter: ["text", "lcov"],
 					},
 					globals: true,
-					setupFiles: ["./.storybook/vitest.setup.ts"],
+					setupFiles: ["./vitest.setup.ts"],
 				},
 			},
 		],

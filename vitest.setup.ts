@@ -3,10 +3,10 @@ import "@testing-library/jest-dom";
 //   If you"re using Next.js with Vite, import from @storybook/experimental-nextjs-vite
 import { setProjectAnnotations } from "@storybook/react";
 import { afterAll, afterAll, beforeAll } from "vitest";
-import { server } from "@/app/mocks/node";
+import { server } from "./app/mocks/node";
 // 👇 Import the exported annotations, if any, from the addons you're using; otherwise remove this
 // import * as addonAnnotations from "my-addon/preview";
-import * as previewAnnotations from "./preview";
+import * as previewAnnotations from "./.storybook/preview";
 
 const annotations = setProjectAnnotations([previewAnnotations]);
 
