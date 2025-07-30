@@ -1,14 +1,18 @@
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect } from "storybook/test";
 import TaskStories from "./task.story";
 import { TaskList } from "./task-list";
 
-export default {
+const meta = {
 	component: TaskList,
 	title: "TaskList",
 	argTypes: {
 		...TaskStories.argTypes,
 	},
-};
+} satisfies Meta<typeof TaskList>;
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Default = {
 	args: {
@@ -28,11 +32,16 @@ export const Default = {
 				title: "Draft monthly blog to customers",
 			},
 		],
+		onTogglePinTask: () => {},
+		onArchiveTask: () => {},
+		onEditTitle: () => {},
+		onDeleteTask: () => {},
 	},
-};
+} satisfies Story;
 
 export const WithPinnedTasks = {
 	args: {
+		...Default.args,
 		tasks: [
 			{
 				id: "6",
@@ -42,10 +51,11 @@ export const WithPinnedTasks = {
 			...Default.args.tasks.slice(0, 5),
 		],
 	},
-};
+} satisfies Story;
 
 export const Loading = {
 	args: {
+		...Default.args,
 		tasks: [],
 		loading: true,
 	},
@@ -58,11 +68,11 @@ export const Loading = {
 		const loadingItems = await canvas.findAllByTestId("loading-item");
 		await expect(loadingItems.length).toBe(6);
 	},
-};
+} satisfies Story;
 
 export const Empty = {
 	args: {
 		...Loading.args,
 		loading: false,
 	},
-};
+} satisfies Story;

@@ -10,7 +10,8 @@ export interface AuthOptions {
 export interface User {
 	id: string;
 	name: string;
-	[key: string]: any; // Allow any additional user properties
+	token?: string;
+	// [key: string]: any; // Allow any additional user properties
 }
 
 export interface AuthResponse {

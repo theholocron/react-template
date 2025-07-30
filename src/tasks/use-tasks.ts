@@ -4,7 +4,7 @@ interface Task {
 	id: string;
 	title: string;
 	state: "TASK_INBOX" | "TASK_PINNED" | "TASK_ARCHIVED";
-	[key: string]: any; // Allow any additional properties
+	// [key: string]: any; // Allow any additional properties
 }
 
 export interface TaskResponse {
