@@ -35,7 +35,7 @@
     "start": "storybook dev -p 6006",
     "test": "vitest",
     "test:cypress": "cypress open",
-    "test:storybook": "vitest --project=storybook"
+    "test:storybook": "vitest run"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",

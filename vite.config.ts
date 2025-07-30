@@ -1,7 +1,7 @@
 import * as path from "node:path";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vitest/config";
+import { coverageConfigDefaults, defineConfig } from "vitest/config";
 
 /*
  * @see https://vitejs.dev/config/
@@ -24,51 +24,32 @@ export default defineConfig({
 			},
 		},
 	},
-	optimizeDeps: {
-		include: ["react/jsx-dev-runtime", "@storybook/react", "react-dom", "react-is"],
-	},
 	publicDir: "public",
-	plugins: [react()],
+	plugins: [react(), storybookTest()],
 	resolve: {
 		alias: {
 			"@": path.resolve(__dirname, "./src"), // Example alias, adjust as needed
-			"@/app": path.resolve(__dirname, "./app"), // new alias for your app folder
 		},
 	},
 	test: {
-		extends: true,
-		// environment: "jsdom", // Use jsdom for testing React components
-		projects: [
-			{
-				plugins: [
-					storybookTest({
-						// The location of your Storybook config, main.js|ts
-						configDir: path.join(__dirname, ".storybook"),
-						// This should match your package.json script to run Storybook
-						// The --ci flag will skip prompts and not open a browser
-						storybookScript: "npm start --ci",
-					}),
-				],
-				test: {
-					name: "storybook",
-					// Enable browser mode
-					browser: {
-						enabled: true,
-						// Make sure to install Playwright
-						provider: "playwright",
-						headless: true,
-						instances: [{ browser: "chromium" }],
-					},
-					environment: "jsdom",
-					coverage: {
-						provider: "v8",
-						reportsDirectory: "./coverage",
-						reporter: ["text", "lcov"],
-					},
-					globals: true,
-					setupFiles: ["./vitest.setup.ts"],
-				},
-			},
-		],
+		browser: {
+			enabled: true,
+			provider: "playwright",
+			headless: true,
+			instances: [{ browser: "chromium" }],
+		},
+		coverage: {
+			all: false,
+			exclude: [
+				...coverageConfigDefaults.exclude,
+				"**/handlers.*", // msw handlers
+				"**/*.{mock}.*",
+			],
+			provider: "v8",
+			reporter: ["text", "lcov"],
+		},
+		environment: "jsdom",
+		globals: true,
+		setupFiles: ["./vitest.setup.ts"],
 	},
 });
