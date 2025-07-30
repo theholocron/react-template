@@ -32,6 +32,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			"@": path.resolve(__dirname, "./src"), // Example alias, adjust as needed
+			"@/app": path.resolve(__dirname, "./app"), // new alias for your app folder
 		},
 	},
 	test: {
