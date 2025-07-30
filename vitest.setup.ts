@@ -3,13 +3,17 @@ import "@testing-library/jest-dom";
 //   If you"re using Next.js with Vite, import from @storybook/experimental-nextjs-vite
 import { setProjectAnnotations } from "@storybook/react";
 import { afterAll, afterEach, beforeAll } from "vitest";
-import { server } from "./app/mocks/node";
+// import { server } from "./app/mocks/node";
+import { worker } from "./app/mocks/browser";
 // 👇 Import the exported annotations, if any, from the addons you're using; otherwise remove this
 // import * as addonAnnotations from "my-addon/preview";
 import * as previewAnnotations from "./.storybook/preview";
 
 const annotations = setProjectAnnotations([previewAnnotations]);
 
+/*
+ * server side
+ *
 beforeAll(async () => {
 	// Run Storybook's beforeAll hook
 	await annotations?.beforeAll?.();
@@ -18,3 +22,20 @@ beforeAll(async () => {
 });
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
+ */
+
+beforeAll(async () => {
+	// Run Storybook's beforeAll hook
+	await annotations?.beforeAll?.();
+	await worker.start({
+		onUnhandledRequest: "warn",
+	});
+});
+
+afterEach(() => {
+	worker.resetHandlers();
+});
+
+afterAll(() => {
+	worker.stop();
+});
