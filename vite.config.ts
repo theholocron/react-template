@@ -59,6 +59,7 @@ export default defineConfig({
 						headless: true,
 						instances: [{ browser: "chromium" }],
 					},
+					environment: "jsdom",
 					coverage: {
 						provider: "v8",
 						reportsDirectory: "./coverage",
