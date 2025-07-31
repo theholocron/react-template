@@ -3,6 +3,7 @@
   "extends": "@tsconfig/vite-react/tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./",
+    "moduleResolution": "bundler",
     "outDir": "./dist",
     "paths": {
       "@/package": ["./package.json"],
