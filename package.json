@@ -57,7 +57,7 @@
     "@testing-library/react": "^16.3.0",
     "@theholocron/commitlint-config": "^4.1.0",
     "@theholocron/eslint-config": "^4.1.0",
-    "@theholocron/lint-staged-config": "^4.1.0",
+    "@theholocron/lint-staged-config": "^7.3.0",
     "@theholocron/prettier-config": "^4.1.0",
     "@theholocron/stylelint-config": "^4.0.0",
     "@tsconfig/node-lts": "^22.0.2",
