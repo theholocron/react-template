@@ -2,7 +2,7 @@
   "name": "@theholocron/react-template",
   "version": "0.2.3",
   "description": "<description>",
-  "homepage": "https://github.com/theholocron/react-template#readme",
+  "homepage": "<homepage>",
   "bugs": "https://github.com/theholocron/react-template/issues",
   "repository": {
     "type": "git",
@@ -30,7 +30,6 @@
     "build:storybook": "storybook build",
     "dev": "vite",
     "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
-    "prepare": "husky",
     "preview": "vite preview",
     "start": "storybook dev -p 6006",
     "test": "vitest",
@@ -55,13 +54,16 @@
     "@storybook/react-vite": "^9.0.18",
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
+    "@theholocron/cli": "^3.6.0",
     "@theholocron/commitlint-config": "^4.1.0",
     "@theholocron/eslint-config": "^4.1.0",
-    "@theholocron/lint-staged-config": "^4.1.0",
+    "@theholocron/holocron-config": "^7.8.1",
     "@theholocron/prettier-config": "^4.1.0",
+    "@theholocron/storybook-config": "^7.8.1",
     "@theholocron/stylelint-config": "^4.0.0",
-    "@tsconfig/node-lts": "^22.0.2",
-    "@tsconfig/vite-react": "^7.0.0",
+    "@theholocron/tsconfig": "^7.8.1",
+    "@theholocron/vite-config": "^7.8.1",
+    "@theholocron/vitest-config": "^7.8.1",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
     "@vitejs/plugin-react": "^4.7.0",
@@ -74,9 +76,7 @@
     "eslint-plugin-cypress": "^5.1.0",
     "eslint-plugin-storybook": "^9.0.18",
     "globals": "^16.3.0",
-    "husky": "^9.1.7",
     "jsdom": "^26.1.0",
-    "lint-staged": "^16.1.2",
     "msw": "^2.10.4",
     "msw-storybook-addon": "^2.0.5",
     "playwright": "^1.54.1",
@@ -96,10 +96,9 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
-  "packageManager": "npm@9.5.0",
+  "packageManager": "pnpm@10.33.0",
   "engines": {
-    "node": ">=22",
-    "npm": ">=10"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"

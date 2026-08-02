@@ -2,25 +2,24 @@
 # Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
 # Tool:    holocron setup
 # Changes: run `holocron setup` to regenerate.
-name: Lint
+name: CodeQL
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches: [main, alpha]
+    branches:
+      - main
   pull_request:
-
-concurrency:
-  group: lint-${{ github.ref }}
-  cancel-in-progress: true
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * 1"
 
 permissions:
-  contents: write
-  statuses: write
+  actions: read
+  contents: read
+  security-events: write
 
 jobs:
-  lint:
-    name: Lint
-    uses: theholocron/.github/.github/workflows/lint.yml@main
+  codeql:
+    uses: theholocron/.github/.github/workflows/codeql.yml@main
     secrets: inherit
-    with:
-      enable-auto-commit: true

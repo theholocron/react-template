@@ -2,7 +2,7 @@
 # Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
 # Tool:    holocron setup
 # Changes: run `holocron setup` to regenerate.
-name: Lint
+name: Typecheck
 
 on: # yamllint disable-line rule:truthy
   push:
@@ -10,17 +10,14 @@ on: # yamllint disable-line rule:truthy
   pull_request:
 
 concurrency:
-  group: lint-${{ github.ref }}
+  group: typecheck-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
-  contents: write
-  statuses: write
+  contents: read
 
 jobs:
-  lint:
-    name: Lint
-    uses: theholocron/.github/.github/workflows/lint.yml@main
+  typecheck:
+    name: Typecheck
+    uses: theholocron/.github/.github/workflows/typecheck.yml@main
     secrets: inherit
-    with:
-      enable-auto-commit: true
