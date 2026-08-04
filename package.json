@@ -35,6 +35,7 @@
     "release": "semantic-release",
     "start": "storybook dev -p 6006",
     "test": "vitest",
+    "test:coverage": "vitest run --coverage",
     "test:cypress": "cypress open",
     "test:storybook": "vitest run --project storybook"
   },
