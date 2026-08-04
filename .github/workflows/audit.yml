@@ -19,6 +19,8 @@ permissions:
 jobs:
   audit:
     uses: theholocron/.github/.github/workflows/audit.yml@main
+    with:
+      run-performance: true
     secrets: inherit
 
   performance:

@@ -21,7 +21,16 @@ export default defineConfig({
 	},
 	workflows: [
 		...workflows,
-		"audit",
+		{ name: "audit", with: { "run-performance": true } },
+		{
+			name: "test",
+			with: {
+				"run-storybook": true,
+				"run-interaction": true,
+				"run-user-flow": true,
+				"run-chromatic": true,
+			},
+		},
 		{ name: "release", with: { "run-build": true } },
 		{
 			name: "deploy-storybook",
