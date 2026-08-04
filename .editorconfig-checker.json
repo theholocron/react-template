@@ -1,12 +1,17 @@
 {
-  "Version": "v3.3.0",
+  "Version": "v3.7.0",
   "Verbose": false,
   "Format": "",
   "Debug": false,
   "IgnoreDefaults": false,
   "SpacesAfterTabs": false,
   "NoColor": false,
-  "Exclude": ["^LICENSE$", "^public/.*"],
+  "Exclude": [
+    "(^|.+/)LICENSE$",
+    "^public/.*",
+    "\\.md$",
+    "\\.mdx$"
+  ],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {
