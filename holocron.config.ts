@@ -1,5 +1,5 @@
-import { defineConfig } from "@theholocron/cli";
 import type { HolocronConfig } from "@theholocron/cli";
+import { defineConfig } from "@theholocron/cli";
 import { node } from "@theholocron/holocron-config";
 
 const { repo, workflows, providers } = node();

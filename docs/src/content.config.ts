@@ -1,7 +1,8 @@
+import { fileURLToPath } from "node:url";
+
 import { docsSchema } from "@astrojs/starlight/schema";
 import { createDocsLoader } from "@theholocron/docs-theme/loader";
 import { defineCollection } from "astro:content";
-import { fileURLToPath } from "node:url";
 
 export const collections = {
 	docs: defineCollection({

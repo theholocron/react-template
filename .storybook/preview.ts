@@ -1,8 +1,8 @@
+import "../app/app.css";
+
 import { type Preview } from "@storybook/react";
 import { initialize, mswLoader } from "msw-storybook-addon";
 import { INITIAL_VIEWPORTS } from "storybook/viewport";
-
-import "../app/app.css";
 
 // Initialize MSW
 initialize({ onUnhandledRequest: "bypass" });
