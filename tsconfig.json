@@ -12,7 +12,7 @@
       "@/package": ["./package.json"],
       "@/*": ["./src/*"]
     },
-    "types": ["vite/client", "cypress"]
+    "types": ["vite/client", "cypress", "@testing-library/jest-dom"]
   },
   "include": ["app/**/*.ts", "app/**/*.tsx", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]

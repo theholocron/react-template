@@ -20,12 +20,13 @@ export default defineConfig({
 		},
 	},
 	workflows: [
-		...workflows,
+		...workflows.filter((w) => (typeof w === "string" ? w : w.name) !== "test"),
+		"audit",
 		{ name: "release", with: { "run-build": true } },
 		{
 			name: "deploy-docs",
 			with: { name: "react-template" },
-			paths: ["docs/**"],
+			paths: ["docs/**", "src/**"],
 		},
 	],
 	providers: {

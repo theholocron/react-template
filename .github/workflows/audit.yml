@@ -1,0 +1,22 @@
+# AUTO-GENERATED — do not edit directly.
+# Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
+# Tool:    holocron setup
+# Changes: run `holocron setup` to regenerate.
+name: Audit
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches: [main, alpha]
+  pull_request:
+
+concurrency:
+  group: audit-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    uses: theholocron/.github/.github/workflows/audit.yml@main
+    secrets: inherit
