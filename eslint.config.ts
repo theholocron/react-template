@@ -9,5 +9,9 @@ export default [
 		settings: {
 			react: { version: "detect" },
 		},
+		rules: {
+			"react/react-in-jsx-scope": "off",
+			"n/no-missing-import": "off",
+		},
 	},
 ] satisfies Linter.Config[];
