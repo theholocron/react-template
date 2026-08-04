@@ -1,4 +1,5 @@
 import { defineConfig } from "@theholocron/cli";
+import type { HolocronConfig } from "@theholocron/cli";
 import { node } from "@theholocron/holocron-config";
 
 const { repo, workflows, providers } = node();
@@ -33,4 +34,4 @@ export default defineConfig({
 	},
 	agent: "claude",
 	skills: ["git-safety", "pr-workflow", "commit-standards", "security-review"],
-});
+} satisfies HolocronConfig);
