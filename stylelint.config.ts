@@ -1,8 +1,9 @@
+import type { Config } from "stylelint";
+
 /**
  * @see https://stylelint.io/user-guide/configure/
- * @type {import("stylelint").Config}
  */
-const config = {
+const config: Config = {
 	extends: ["@theholocron/stylelint-config"],
 };
 
