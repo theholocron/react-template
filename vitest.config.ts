@@ -1,5 +1,5 @@
-import { react, storybook } from "@theholocron/vitest-config";
-import { coverageConfigDefaults, defineConfig } from "vitest/config";
+import { coverage, react, storybook } from "@theholocron/vitest-config";
+import { defineConfig } from "vitest/config";
 
 /*
  * @see https://vitest.dev/config/
@@ -7,10 +7,8 @@ import { coverageConfigDefaults, defineConfig } from "vitest/config";
 export default defineConfig(async () => ({
 	test: {
 		coverage: {
-			all: false,
-			exclude: [...coverageConfigDefaults.exclude, "**/handlers.*", "**/*.{mock}.*"],
-			provider: "v8",
-			reporter: ["text", "lcov"],
+			...coverage,
+			exclude: [...coverage.exclude, "**/handlers.*", "**/*.{mock}.*"],
 		},
 		projects: [
 			react({ name: "unit" }),
