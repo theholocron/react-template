@@ -3,8 +3,6 @@ import type { Config } from "stylelint";
 /**
  * @see https://stylelint.io/user-guide/configure/
  */
-const config: Config = {
+export default {
 	extends: ["@theholocron/stylelint-config"],
-};
-
-export default config;
+} satisfies Config;
