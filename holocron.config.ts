@@ -20,7 +20,7 @@ export default defineConfig({
 		},
 	},
 	workflows: [
-		...workflows.filter((w) => (typeof w === "string" ? w : w.name) !== "test"),
+		...workflows,
 		"audit",
 		{ name: "release", with: { "run-build": true } },
 		{
