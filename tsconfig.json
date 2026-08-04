@@ -3,14 +3,17 @@
   "extends": "@theholocron/tsconfig/node-lts",
   "compilerOptions": {
     "baseUrl": "./",
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "outDir": "./dist",
     "paths": {
       "@/package": ["./package.json"],
       "@/*": ["./src/*"]
     },
-    "types": ["cypress"]
+    "types": ["vite/client", "cypress"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["app/**/*.ts", "app/**/*.tsx", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

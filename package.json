@@ -37,7 +37,8 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:cypress": "cypress open",
-    "test:storybook": "vitest run --project storybook"
+    "test:storybook": "vitest run --project storybook",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.1",
@@ -73,6 +74,8 @@
     "@theholocron/tsconfig": "^7.13.1",
     "@theholocron/vite-config": "^7.13.1",
     "@theholocron/vitest-config": "^7.13.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "@vitest/browser": "^4.1.10",
     "@vitest/coverage-v8": "^4.1.10",
     "@vitest/eslint-plugin": "^1.6.26",
