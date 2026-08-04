@@ -6,10 +6,8 @@ export interface InboxProps {
 
 type TaskState = "TASK_PINNED" | "TASK_INBOX" | "TASK_ARCHIVED";
 
-export function Inbox (props: InboxProps) {
-	const {
-		error = "",
-	} = props;
+export function Inbox(props: InboxProps) {
+	const { error = "" } = props;
 
 	const [tasks, dispatch] = useTasks();
 
