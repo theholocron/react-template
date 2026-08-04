@@ -1,6 +1,5 @@
 import { reactApp } from "@theholocron/eslint-config/bundles/react-app";
 import { cypress } from "@theholocron/eslint-config/cypress";
-import type { Linter } from "eslint";
 
 export default [
 	...reactApp(),
@@ -14,4 +13,4 @@ export default [
 			"n/no-missing-import": "off",
 		},
 	},
-] satisfies Linter.Config[];
+];
