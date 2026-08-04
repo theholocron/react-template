@@ -35,7 +35,7 @@
     "release": "semantic-release",
     "start": "storybook dev -p 6006",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage",
+    "test:coverage": "vitest run --project unit --coverage",
     "test:cypress": "cypress open",
     "test:storybook": "vitest run --project storybook",
     "typecheck": "tsc --noEmit"
