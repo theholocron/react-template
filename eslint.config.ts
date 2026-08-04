@@ -1,11 +1,8 @@
 import { reactApp } from "@theholocron/eslint-config/bundles/react-app";
 import { cypress } from "@theholocron/eslint-config/cypress";
+import type { Linter } from "eslint";
 
-/**
- * @see https://eslint.org/docs/latest/use/configure/
- * @type {import("eslint").Linter.Config}
- */
-const config = [
+export default [
 	...reactApp(),
 	...cypress(),
 	{
@@ -13,6 +10,4 @@ const config = [
 			react: { version: "detect" },
 		},
 	},
-];
-
-export default config;
+] satisfies Linter.Config[];
