@@ -24,9 +24,8 @@ export default defineConfig({
 		"audit",
 		{ name: "release", with: { "run-build": true } },
 		{
-			name: "deploy-docs",
-			with: { name: "react-template" },
-			paths: ["docs/**", "src/**"],
+			name: "deploy-storybook",
+			paths: ["src/**", ".storybook/**"],
 		},
 	],
 	providers: {
