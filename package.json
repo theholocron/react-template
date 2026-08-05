@@ -30,7 +30,7 @@
     "build:storybook": "storybook build",
     "dev": "vite",
     "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
-    "prepare": "husky",
+    "prepare": "husky && playwright install chromium",
     "prepreview": "pnpm build --config vite.app.config.ts",
     "preview": "vite preview --config vite.app.config.ts",
     "release": "semantic-release",
