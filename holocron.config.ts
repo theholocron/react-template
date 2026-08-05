@@ -4,7 +4,7 @@ import { node } from "@theholocron/holocron-config";
 
 const { repo, workflows, providers } = node();
 export default defineConfig({
-	description: "React starter template for @theholocron repos.",
+	description: "A modern React template with pre-configured tools, best practices, and CI/CD setup for rapid project development.",
 	homepage: "https://docs.theholocron.dev/react-template/",
 	repo: {
 		name: "theholocron/react-template",
