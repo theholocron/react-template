@@ -1,5 +1,5 @@
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
-import { coverage, react } from "@theholocron/vitest-config";
+import { coverage } from "@theholocron/vitest-config";
 import { playwright } from "@vitest/browser-playwright";
 import { defineConfig } from "vitest/config";
 
@@ -13,7 +13,6 @@ export default defineConfig({
 			exclude: [...coverage.exclude, "**/handlers.*", "**/*.{mock}.*"],
 		},
 		projects: [
-			react({ name: "unit" }),
 			{
 				plugins: [storybookTest({ configDir: ".storybook" })],
 				test: {
