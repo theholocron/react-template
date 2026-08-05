@@ -9,9 +9,6 @@ on: # yamllint disable-line rule:truthy
     branches: [main, alpha]
   pull_request:
 
-concurrency:
-  group: test-${{ github.ref }}
-  cancel-in-progress: true
 
 permissions:
   contents: read
