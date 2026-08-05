@@ -88,3 +88,4 @@ reports
 dist
 super-linter-output
 storybook-static
+dist-app
