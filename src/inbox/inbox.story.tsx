@@ -18,6 +18,13 @@ export const Default = {
 			handlers: [taskListHandler],
 		},
 	},
+	play: async ({ canvas }) => {
+		const heading = await canvas.findByRole("heading", { name: "Taskbox" });
+		await expect(heading).toBeInTheDocument();
+
+		const tasks = await canvas.findAllByRole("listitem");
+		await expect(tasks).toHaveLength(6);
+	},
 } satisfies Story;
 
 export const Error = {
@@ -28,6 +35,11 @@ export const Error = {
 		msw: {
 			handlers: [taskListErrorHandler],
 		},
+	},
+	play: async ({ canvas }) => {
+		await expect(canvas.getByText("Oh no!")).toBeInTheDocument();
+		await expect(canvas.getByText("Something went wrong")).toBeInTheDocument();
+		await expect(canvas.queryByRole("listitem")).not.toBeInTheDocument();
 	},
 } satisfies Story;
 
