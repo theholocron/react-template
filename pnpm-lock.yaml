@@ -11,6 +11,9 @@ importers:
       '@theholocron/lighthouse-config':
         specifier: ^7.14.0
         version: 7.14.0
+      '@theholocron/vite-config':
+        specifier: ^7.14.1
+        version: 7.14.1(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0))
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^5.2.1
@@ -102,9 +105,6 @@ importers:
       '@theholocron/tsconfig':
         specifier: ^7.13.1
         version: 7.13.1(typescript@5.9.3)
-      '@theholocron/vite-config':
-        specifier: ^7.13.1
-        version: 7.13.1(@vitejs/plugin-react@4.7.0(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0)))(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0))
       '@theholocron/vitest-config':
         specifier: ^7.13.1
         version: 7.13.1(@storybook/addon-vitest@10.5.6(@vitest/browser@4.1.10)(@vitest/runner@4.1.10)(react@19.2.8)(storybook@10.5.6(@types/react@19.2.18)(prettier@3.9.6)(react@19.2.8))(vitest@4.1.10))(@testing-library/jest-dom@7.0.0(@testing-library/dom@10.4.1))(@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@testing-library/user-event@14.6.1(@testing-library/dom@10.4.1))(@vitest/browser@4.1.10)(@vitest/coverage-v8@4.1.10)(jsdom@30.0.1)(playwright@1.62.1)(vitest@4.1.10)
@@ -393,18 +393,6 @@ packages:
 
   '@babel/plugin-syntax-typescript@7.29.7':
     resolution: {integrity: sha512-ngr+82Sh0xMz25TPCZi+nC2iTzjfCdWS2ONXTp/PtSCHCgaCNBpdMqgvJ2ccdLlClVZ7sisIgB914j/JFe+RZA==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
-  '@babel/plugin-transform-react-jsx-self@7.29.7':
-    resolution: {integrity: sha512-TL0hMc9xzy86VD31nUiwzd5otRAcyEPcsegCxolO0PvcXuH1v0kECe/UIznYFihpkvU5wg/jk4v0TTEFfm53fw==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
-  '@babel/plugin-transform-react-jsx-source@7.29.7':
-    resolution: {integrity: sha512-06IyK09H3wi4cGbhDBwp5gUGo0IKtnYa8tyTiephirPCK6fbobVGiXMMI5zLQ4aKEYP3wZ3ArU44o+8KMrSG/Q==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -1847,9 +1835,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rolldown/pluginutils@1.0.0-beta.27':
-    resolution: {integrity: sha512-+d0F4MKMCbeVUJwG96uQ4SgAznZNSq93I3V+9NHA4OpvqG8mRCpGdKmK8l/dl02h2CCDHwW2FqilnTyDcAnqjA==}
-
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
@@ -2553,18 +2538,18 @@ packages:
     peerDependencies:
       typescript: ^5
 
-  '@theholocron/vite-config@7.13.1':
-    resolution: {integrity: sha512-UI5Lc10sCgTtiX0lvIbCpP+gz068rNR1LlSNRfgbBnlvxZkZrhOUux9bhiXsUc0mmgP2Ixq8EBaQSRTmgaU81w==}
+  '@theholocron/vite-config@7.14.1':
+    resolution: {integrity: sha512-CgL8n16YntzFRGkogGzr7lyfqizP3Z2v/MS67SNYsjzdPpY+mUrKegOQv1SEmnf5a6d2Q/hVv1z4K5Qo8eVhpQ==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
       '@codecov/vite-plugin': ^2
-      '@vitejs/plugin-react': ^4
-      vite: ^6 || ^7
+      '@vitejs/plugin-react-oxc': ^0.4
+      vite: ^6 || ^7 || ^8
       vite-tsconfig-paths: ^5
     peerDependenciesMeta:
       '@codecov/vite-plugin':
         optional: true
-      '@vitejs/plugin-react':
+      '@vitejs/plugin-react-oxc':
         optional: true
       vite-tsconfig-paths:
         optional: true
@@ -2838,12 +2823,6 @@ packages:
   '@typescript-eslint/visitor-keys@8.66.0':
     resolution: {integrity: sha512-dkKR8q+lKciskj1Y3vthHktl+3cMLWGyVUP23bRiPZ5O9BRT++4EqDDV+TVeIKBL1VXVEqrJlz8MYbcnvJcAlg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@vitejs/plugin-react@4.7.0':
-    resolution: {integrity: sha512-gUu9hwfWvvEDBBmgtAowQCojwZmJ5mcLn3aufeCsitijs3+f2NsrPtlAWIR6OPiqljl96GVCUbLe0HyqIpVaoA==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
 
   '@vitest/browser@4.1.10':
     resolution: {integrity: sha512-UDwuWGwXj646CBx/bQHOaJSX7np0I8JL/UKQYa1e4QrVHH8VdWtx8eaOuf8sy0ShwDgR6NjJAsp5eF6vjF6qng==}
@@ -6621,10 +6600,6 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-refresh@0.17.0:
-    resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
-    engines: {node: '>=0.10.0'}
-
   react@19.2.8:
     resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
     engines: {node: '>=0.10.0'}
@@ -8283,18 +8258,6 @@ snapshots:
       '@babel/core': 7.29.7
       '@babel/helper-plugin-utils': 7.29.7
 
-  '@babel/plugin-transform-react-jsx-self@7.29.7(@babel/core@7.29.7)':
-    dependencies:
-      '@babel/core': 7.29.7
-      '@babel/helper-plugin-utils': 7.29.7
-    optional: true
-
-  '@babel/plugin-transform-react-jsx-source@7.29.7(@babel/core@7.29.7)':
-    dependencies:
-      '@babel/core': 7.29.7
-      '@babel/helper-plugin-utils': 7.29.7
-    optional: true
-
   '@babel/runtime@7.29.7': {}
 
   '@babel/template@7.29.7':
@@ -9588,9 +9551,6 @@ snapshots:
   '@rolldown/binding-win32-x64-msvc@1.2.2':
     optional: true
 
-  '@rolldown/pluginutils@1.0.0-beta.27':
-    optional: true
-
   '@rolldown/pluginutils@1.0.1': {}
 
   '@rollup/pluginutils@5.4.0(rollup@4.62.4)':
@@ -10268,11 +10228,9 @@ snapshots:
     dependencies:
       typescript: 5.9.3
 
-  '@theholocron/vite-config@7.13.1(@vitejs/plugin-react@4.7.0(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0)))(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0))':
+  '@theholocron/vite-config@7.14.1(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0))':
     dependencies:
       vite: 8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0)
-    optionalDependencies:
-      '@vitejs/plugin-react': 4.7.0(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0))
 
   '@theholocron/vitest-config@7.13.1(@storybook/addon-vitest@10.5.6(@vitest/browser@4.1.10)(@vitest/runner@4.1.10)(react@19.2.8)(storybook@10.5.6(@types/react@19.2.18)(prettier@3.9.6)(react@19.2.8))(vitest@4.1.10))(@testing-library/jest-dom@7.0.0(@testing-library/dom@10.4.1))(@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@testing-library/user-event@14.6.1(@testing-library/dom@10.4.1))(@vitest/browser@4.1.10)(@vitest/coverage-v8@4.1.10)(jsdom@30.0.1)(playwright@1.62.1)(vitest@4.1.10)':
     dependencies:
@@ -10577,19 +10535,6 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.66.0
       eslint-visitor-keys: 5.0.1
-
-  '@vitejs/plugin-react@4.7.0(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0))':
-    dependencies:
-      '@babel/core': 7.29.7
-      '@babel/plugin-transform-react-jsx-self': 7.29.7(@babel/core@7.29.7)
-      '@babel/plugin-transform-react-jsx-source': 7.29.7(@babel/core@7.29.7)
-      '@rolldown/pluginutils': 1.0.0-beta.27
-      '@types/babel__core': 7.20.5
-      react-refresh: 0.17.0
-      vite: 8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0)
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
 
   '@vitest/browser@4.1.10(msw@2.15.0(@types/node@26.1.2)(typescript@5.9.3))(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)(yaml@2.9.0))(vitest@4.1.10)':
     dependencies:
@@ -15122,9 +15067,6 @@ snapshots:
   react-is@17.0.2: {}
 
   react-is@18.3.1: {}
-
-  react-refresh@0.17.0:
-    optional: true
 
   react@19.2.8: {}
 
