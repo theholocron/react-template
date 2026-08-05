@@ -21,4 +21,6 @@ jobs:
   lint:
     name: Lint
     uses: theholocron/.github/.github/workflows/lint.yml@main
+    with:
+      enable-stylelint: true
     secrets: inherit

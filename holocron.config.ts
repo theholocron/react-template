@@ -4,7 +4,8 @@ import { node } from "@theholocron/holocron-config";
 
 const { repo, workflows, providers } = node();
 export default defineConfig({
-	description: "A modern React template with pre-configured tools, best practices, and CI/CD setup for rapid project development.",
+	description:
+		"A modern React template with pre-configured tools, best practices, and CI/CD setup for rapid project development.",
 	homepage: "https://docs.theholocron.dev/react-template/",
 	repo: {
 		name: "theholocron/react-template",
@@ -21,6 +22,7 @@ export default defineConfig({
 	},
 	workflows: [
 		...workflows,
+		{ name: "lint", with: { "enable-stylelint": true } },
 		{
 			name: "audit",
 			with: { "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
