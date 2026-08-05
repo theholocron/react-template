@@ -27,12 +27,11 @@
   ],
   "scripts": {
     "build": "vite build",
-    "build:app": "vite build --config vite.app.config.ts",
     "build:storybook": "storybook build",
     "dev": "vite",
     "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
     "prepare": "husky",
-    "prepreview": "pnpm build:app",
+    "prepreview": "pnpm build --config vite.app.config.ts",
     "preview": "vite preview --config vite.app.config.ts",
     "release": "semantic-release",
     "start": "storybook dev -p 6006",
@@ -134,7 +133,9 @@
     ]
   },
   "msw": {
-    "workerDirectory": "public"
+    "workerDirectory": [
+      "public"
+    ]
   },
   "releases": "https://github.com/theholocron/react-template/releases",
   "wiki": "https://github.com/theholocron/react-template/wiki"
