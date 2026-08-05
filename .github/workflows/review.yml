@@ -7,6 +7,9 @@ name: Review
 on: # yamllint disable-line rule:truthy
   pull_request:
 
+concurrency:
+  group: review-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
