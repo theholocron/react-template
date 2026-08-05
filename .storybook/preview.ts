@@ -1,15 +1,12 @@
 import "../app/app.css";
 
 import { type Preview } from "@storybook/react";
-import { initialize, mswLoader } from "msw-storybook-addon";
+import { createPreviewAnnotations } from "msw-storybook-addon/preview";
 import { INITIAL_VIEWPORTS } from "storybook/viewport";
 
-// Initialize MSW
-initialize({ onUnhandledRequest: "bypass" });
-
 const preview: Preview = {
+	...createPreviewAnnotations(),
 	layout: "centered",
-	loaders: [mswLoader],
 	parameters: {
 		controls: {
 			matchers: {
