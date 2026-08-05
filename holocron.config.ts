@@ -21,7 +21,10 @@ export default defineConfig({
 	},
 	workflows: [
 		...workflows,
-		{ name: "audit", with: { "run-performance": true } },
+		{
+			name: "audit",
+			with: { "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
+		},
 		{
 			name: "test",
 			with: {
