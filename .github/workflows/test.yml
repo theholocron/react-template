@@ -21,4 +21,9 @@ jobs:
   test:
     name: Test
     uses: theholocron/.github/.github/workflows/test.yml@main
+    with:
+      run-storybook: true
+      run-interaction: true
+      run-user-flow: true
+      run-chromatic: true
     secrets: inherit
