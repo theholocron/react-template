@@ -2,7 +2,6 @@
 # Source:  theholocron/holocron · packages/cli/src/commands/setup.ts
 # Tool:    holocron setup
 # Changes: run `holocron setup` to regenerate.
-
 version: 2
 updates:
   - package-ecosystem: npm
