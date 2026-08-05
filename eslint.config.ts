@@ -1,7 +1,8 @@
 import { reactApp } from "@theholocron/eslint-config/bundles/react-app";
 import { cypress } from "@theholocron/eslint-config/cypress";
+import type { Linter } from "eslint";
 
-export default [
+const config: Linter.Config[] = [
 	...reactApp(),
 	...cypress(),
 	{
@@ -14,3 +15,5 @@ export default [
 		},
 	},
 ];
+
+export default config;
