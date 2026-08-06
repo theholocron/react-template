@@ -10,7 +10,7 @@ export default defineConfig({
 	test: {
 		coverage: {
 			...coverage,
-			exclude: [...coverage.exclude, "**/handlers.*", "**/*.{mock}.*"],
+			exclude: [...coverage.exclude, "**/handlers.*", "**/*.{mock}.*", "**/*.css"],
 		},
 		projects: [
 			{

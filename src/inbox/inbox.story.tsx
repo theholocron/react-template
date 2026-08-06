@@ -64,6 +64,24 @@ export const PinTask = {
 	},
 } satisfies Story;
 
+export const UnpinTask = {
+	parameters: {
+		...Default.parameters,
+	},
+	play: async ({ canvas, userEvent }) => {
+		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
+
+		const itemToPin = await getTask("task-4");
+		await userEvent.click(await findByRole(itemToPin, "button", { name: "pin" }));
+
+		const unpinButton = within(itemToPin).getByRole("button", { name: "unpin" });
+		await userEvent.click(unpinButton);
+
+		const pinButton = within(itemToPin).getByRole("button", { name: "pin" });
+		await expect(pinButton).toBeInTheDocument();
+	},
+} satisfies Story;
+
 export const ArchiveTask = {
 	parameters: {
 		...Default.parameters,

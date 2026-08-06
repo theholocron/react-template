@@ -41,6 +41,7 @@ export function reducer(tasks: Task[], action: TaskAction): Task[] {
 		case "EDIT_TITLE":
 			return updateTask(tasks, action.id, { title: action.title });
 		default:
+			// c8 ignore next
 			return tasks;
 	}
 }
@@ -57,6 +58,7 @@ export function useTasks(): [Task[], React.Dispatch<TaskAction>] {
 				dispatch({ type: "UPDATE_TASKS", tasks });
 			})
 			.catch((error) => {
+				// c8 ignore next 3 — requires a network-level fetch rejection, not an HTTP error response
 				if (!abortController.signal.aborted) {
 					console.log(error);
 				}
