@@ -1,4 +1,4 @@
-# `theholocron/react-template`
+# `@theholocron/react-template`
 
 <!-- holocron:description -->
 
@@ -17,6 +17,8 @@ pnpm install
 ```
 
 ## Development
+
+This repo uses [pnpm workspaces](https://pnpm.io/workspaces).
 
 ```bash
 pnpm dev           # start dev server
