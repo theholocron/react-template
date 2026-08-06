@@ -8,13 +8,22 @@ A modern React template with pre-configured tools, best practices, and CI/CD set
 
 ## Getting Started
 
-Use this template to scaffold a new React project:
+Use the [Holocron CLI](https://github.com/theholocron/holocron) to scaffold a new React project. It clones the template, renames all placeholder references, wires up your vault provider, and runs `holocron setup` in one step:
 
 ```bash
-gh repo create my-app --template theholocron/react-template --clone
-cd my-app
-pnpm install
+npx @theholocron/cli new react my-app \
+  --description "My app description" \
+  --homepage "https://my-app.example.com" \
+  --vault doppler \
+  --agent claude
 ```
+
+This will:
+
+1. Create `theholocron/my-app` from this template on GitHub
+2. Replace all `react-template` references with `my-app` throughout the repo
+3. Run `pnpm install` (including Playwright browser download)
+4. Run `holocron setup` to configure branch protection, labels, workflows, and repo settings
 
 ## Development
 
