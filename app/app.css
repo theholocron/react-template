@@ -10,7 +10,7 @@ body {
 	padding: 0;
 	outline: none;
 	font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-style: 400;
+	font-weight: 400;
 	color: #333;
 	font-size: 16px;
 	background-color: #26c6da;
@@ -113,7 +113,7 @@ input[type="password"],
 textarea {
 	font-size: 14px;
 	font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-style: 400;
+	font-weight: 400;
 	padding: 0.75rem 0;
 	line-height: 1.5rem !important;
 	border: none;
