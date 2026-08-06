@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, findByRole, within } from "storybook/test";
-import { taskListHandler, taskListErrorHandler } from "../tasks/handlers";
+
+import { taskListErrorHandler, taskListHandler } from "../tasks/handlers";
 import { Inbox } from "./inbox";
 
 const meta = {
@@ -17,6 +18,13 @@ export const Default = {
 			handlers: [taskListHandler],
 		},
 	},
+	play: async ({ canvas }) => {
+		const heading = await canvas.findByRole("heading", { name: "Taskbox" });
+		await expect(heading).toBeInTheDocument();
+
+		const tasks = await canvas.findAllByRole("listitem");
+		await expect(tasks).toHaveLength(6);
+	},
 } satisfies Story;
 
 export const Error = {
@@ -27,6 +35,11 @@ export const Error = {
 		msw: {
 			handlers: [taskListErrorHandler],
 		},
+	},
+	play: async ({ canvas }) => {
+		await expect(canvas.getByText("Oh no!")).toBeInTheDocument();
+		await expect(canvas.getByText("Something went wrong")).toBeInTheDocument();
+		await expect(canvas.queryByRole("listitem")).not.toBeInTheDocument();
 	},
 } satisfies Story;
 
@@ -48,6 +61,24 @@ export const PinTask = {
 			name: "unpin",
 		});
 		await expect(unpinButton).toBeInTheDocument();
+	},
+} satisfies Story;
+
+export const UnpinTask = {
+	parameters: {
+		...Default.parameters,
+	},
+	play: async ({ canvas, userEvent }) => {
+		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
+
+		const itemToPin = await getTask("task-4");
+		await userEvent.click(await findByRole(itemToPin, "button", { name: "pin" }));
+
+		const unpinButton = within(itemToPin).getByRole("button", { name: "unpin" });
+		await userEvent.click(unpinButton);
+
+		const pinButton = within(itemToPin).getByRole("button", { name: "pin" });
+		await expect(pinButton).toBeInTheDocument();
 	},
 } satisfies Story;
 

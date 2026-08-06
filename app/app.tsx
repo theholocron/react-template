@@ -1,7 +1,8 @@
-import { Inbox, Login, useAuth } from "../src/";
 import "./app.css";
 
-export function App () {
+import { Inbox, Login, useAuth } from "../src/";
+
+export function App() {
 	const [user, logIn] = useAuth();
 
 	if (user?.token) {

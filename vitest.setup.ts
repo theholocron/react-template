@@ -1,41 +1,15 @@
-import "@testing-library/jest-dom";
-// 👇 If you're using Next.js, import from @storybook/nextjs
-//   If you"re using Next.js with Vite, import from @storybook/experimental-nextjs-vite
 import { setProjectAnnotations } from "@storybook/react";
-import { afterAll, afterEach, beforeAll } from "vitest";
-// import { server } from "./app/mocks/node";
-import { worker } from "./app/mocks/browser";
-// 👇 Import the exported annotations, if any, from the addons you're using; otherwise remove this
-// import * as addonAnnotations from "my-addon/preview";
+import { setupMSWBrowser } from "@theholocron/vitest-config/setup/msw";
+
+// import { setupMSWNode } from "@theholocron/vitest-config/setup/msw";
 import * as previewAnnotations from "./.storybook/preview";
+import { worker } from "./app/mocks/browser";
+// import { server } from "./app/mocks/node";
 
 const annotations = setProjectAnnotations([previewAnnotations]);
 
-/*
- * server side
- *
-beforeAll(async () => {
-	// Run Storybook's beforeAll hook
-	await annotations?.beforeAll?.();
-	// Then start MSW server
-	server.listen();
-});
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
- */
+// browser-side MSW (default)
+setupMSWBrowser(worker, annotations);
 
-beforeAll(async () => {
-	// Run Storybook's beforeAll hook
-	await annotations?.beforeAll?.();
-	await worker.start({
-		onUnhandledRequest: "warn",
-	});
-});
-
-afterEach(() => {
-	worker.resetHandlers();
-});
-
-afterAll(() => {
-	worker.stop();
-});
+// server-side MSW (uncomment and swap imports above to use)
+// setupMSWNode(server, annotations);

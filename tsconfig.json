@@ -1,16 +1,19 @@
 {
   "display": "React Template",
-  "extends": "@tsconfig/vite-react/tsconfig.json",
+  "extends": "@theholocron/tsconfig/node-lts",
   "compilerOptions": {
     "baseUrl": "./",
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "outDir": "./dist",
     "paths": {
       "@/package": ["./package.json"],
       "@/*": ["./src/*"]
     },
-    "types": ["cypress"]
+    "types": ["vite/client", "cypress", "@testing-library/jest-dom"]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["./node_modules"]
+  "include": ["app/**/*.ts", "app/**/*.tsx", "src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
 }

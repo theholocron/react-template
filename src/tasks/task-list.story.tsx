@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect } from "storybook/test";
+import { expect, within } from "storybook/test";
+
 import TaskStories from "./task.story";
 import { TaskList } from "./task-list";
 
@@ -15,6 +16,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default = {
+	play: async ({ canvas }) => {
+		const list = await canvas.findByRole("list", { name: "tasks" });
+		await expect(list).toBeInTheDocument();
+
+		const tasks = within(list).getAllByRole("listitem");
+		await expect(tasks).toHaveLength(6);
+	},
 	args: {
 		tasks: [
 			{ id: "1", state: "TASK_INBOX", title: "Build a date picker" },
@@ -51,6 +59,17 @@ export const WithPinnedTasks = {
 			...Default.args.tasks.slice(0, 5),
 		],
 	},
+	play: async ({ canvas }) => {
+		const tasks = await canvas.findAllByRole("listitem");
+		await expect(tasks).toHaveLength(6);
+
+		// Pinned task sorts to the top
+		await expect(tasks[0]).toHaveAttribute("aria-label", "task-6");
+
+		// Pinned task shows unpin button
+		const unpinButton = within(tasks[0]).getByRole("button", { name: "unpin" });
+		await expect(unpinButton).toBeInTheDocument();
+	},
 } satisfies Story;
 
 export const Loading = {
@@ -74,5 +93,12 @@ export const Empty = {
 	args: {
 		...Loading.args,
 		loading: false,
+	},
+	play: async ({ canvas }) => {
+		const emptyContainer = await canvas.findByTestId("empty");
+		await expect(emptyContainer).toBeInTheDocument();
+
+		await expect(canvas.getByText("You have no tasks")).toBeInTheDocument();
+		await expect(canvas.queryByRole("listitem")).not.toBeInTheDocument();
 	},
 } satisfies Story;

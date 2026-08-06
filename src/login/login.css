@@ -2,13 +2,13 @@
 	background: white;
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
-	padding-inline-start: 1.25rem;
-	padding-inline-end: 1.25rem;
+	padding-inline: 1.25rem;
 }
 
 .login-form-container .login-form-wrapper {
 	display: flex;
 }
+
 .login-form-container .login-form-group {
 	width: 100%;
 	position: relative;
@@ -22,6 +22,7 @@
 	margin-bottom: 0.5rem;
 	font-weight: normal;
 }
+
 .login-form-container .login-form-group .login-form-input {
 	width: 100%;
 	min-width: 0;
@@ -29,8 +30,7 @@
 	position: relative;
 	appearance: none;
 	font-size: 1rem;
-	padding-inline-start: 1rem;
-	padding-inline-end: 1rem;
+	padding-inline: 1rem;
 	height: 2.5rem;
 	border-radius: 0.375rem;
 	border: 1px solid;
@@ -55,8 +55,7 @@
 	height: 3rem;
 	min-height: 3rem;
 	font-size: 1rem;
-	padding-inline-end: 1.5rem;
-	padding-inline-start: 1.5rem;
+	padding-inline: 1.5rem;
 	color: white;
 	background-color: #1c3f53;
 	margin: 24px 0 0;
@@ -72,8 +71,7 @@
 .login-screen-container {
 	width: 100%;
 	max-width: 28rem;
-	margin-inline-start: auto;
-	margin-inline-end: auto;
+	margin-inline: auto;
 	border: 1px solid #e2e8f0;
 }
 
@@ -81,8 +79,7 @@
 	background-color: #d3edf4;
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
-	padding-inline-start: 1.25rem;
-	padding-inline-end: 1.25rem;
+	padding-inline: 1.25rem;
 }
 
 .loginscreen-heading {
