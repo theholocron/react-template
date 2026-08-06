@@ -24,4 +24,3 @@ jobs:
     secrets: inherit
     with:
       enable-auto-commit: true
-      enable-stylelint: true

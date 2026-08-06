@@ -22,7 +22,6 @@ export default defineConfig({
 	},
 	workflows: [
 		...workflows,
-		{ name: "lint", with: { "enable-stylelint": true } },
 		{
 			name: "audit",
 			with: { "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
