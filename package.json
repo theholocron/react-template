@@ -127,7 +127,10 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "cypress"
+      "@swc/core",
+      "cypress",
+      "esbuild",
+      "msw"
     ]
   },
   "msw": {
