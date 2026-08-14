@@ -2,20 +2,24 @@
 # Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
 # Tool:    holocron sync-github
 # Changes: edit source in theholocron/holocron and push to alpha or main.
-name: Audit
+name: Deploy
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches: [main, alpha]
-  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  audit:
-    uses: theholocron/.github/.github/workflows/audit.yml@main
-    with:
-      run-performance: true
-      lighthouse-config: lighthouse.config.cjs
+  deploy:
+    name: Deploy
+    uses: theholocron/.github/.github/workflows/deploy.yml@main
     secrets: inherit
