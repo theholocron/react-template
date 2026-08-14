@@ -2,7 +2,7 @@
 title: React Template
 description: A modern React template with pre-configured tools, best practices, and CI/CD setup.
 sidebar:
-    hidden: true
+  hidden: true
 ---
 
 `@theholocron/react-template` is an opinionated starter for React component libraries and apps. It ships with a full development, testing, and release pipeline ready to go.
