@@ -25,12 +25,11 @@ const config: StorybookConfig = {
 	framework: "@storybook/react-vite",
 	staticDirs: ["../public"],
 	stories: ["../src/**/*.mdx", "../src/**/*.story.@(js|jsx|mjs|ts|tsx)"],
-	async viteFinal(config) {
-		// Merge custom configuration into the default config
+	async viteFinal(config, { configType }) {
 		const { mergeConfig } = await import("vite");
 
 		return mergeConfig(config, {
-			// Add dependencies to pre-optimization
+			base: configType === "PRODUCTION" ? "/sandbox/" : "/",
 			optimizeDeps: {
 				include: ["react/jsx-dev-runtime", "react-dom/client"],
 			},
