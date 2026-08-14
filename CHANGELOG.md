@@ -1,3 +1,5 @@
+## [0.4.0](https://github.com/theholocron/react-template/compare/v0.3.0...v0.4.0) (2026-08-14)
+
 ## [0.3.0](https://github.com/theholocron/react-template/compare/v0.2.3...v0.3.0) (2026-08-06)
 
 <!-- @generated -->
