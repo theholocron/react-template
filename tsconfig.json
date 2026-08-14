@@ -12,8 +12,18 @@
       "@/package": ["./package.json"],
       "@/*": ["./src/*"]
     },
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
     "types": ["vite/client", "cypress", "@testing-library/jest-dom"]
   },
-  "include": ["app/**/*.ts", "app/**/*.tsx", "src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    ".astro/types.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "astro.config.ts",
+    "docs/src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": ["node_modules", "dist", "docs/dist"]
 }

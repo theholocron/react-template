@@ -83,12 +83,14 @@ node_modules
 .turbo
 
 # Locally Built Stuff
+.astro/
 coverage
-reports
 dist
-super-linter-output
-storybook-static
 dist-app
+docs/dist/
+reports
+storybook-static
+super-linter-output
 
 # managed by holocron setup — skills
 /.agents/skills/
