@@ -25,5 +25,5 @@ jobs:
     with:
       type: docs
       storybook-projects: >-
-        [{"name":"storybook","workingDir":".","outputDir":"storybook-static"}]
+        [{"name":"","workingDir":".","outputDir":"storybook-static"}]
     secrets: inherit
