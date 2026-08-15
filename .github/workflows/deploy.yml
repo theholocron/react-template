@@ -22,4 +22,8 @@ jobs:
   deploy:
     name: Deploy
     uses: theholocron/.github/.github/workflows/deploy.yml@main
+    with:
+      type: docs
+      storybook-projects: >-
+        [{"name":"storybook","workingDir":".","outputDir":"storybook-static"}]
     secrets: inherit
