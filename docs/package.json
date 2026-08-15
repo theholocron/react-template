@@ -1,0 +1,10 @@
+{
+  "name": "@theholocron/react-template-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "astro build --root ..",
+    "dev": "astro dev --root ..",
+    "preview": "astro preview --root .."
+  }
+}
