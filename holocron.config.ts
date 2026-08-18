@@ -29,7 +29,7 @@ export default defineConfig({
 		...workflows,
 		{
 			name: "audit",
-			with: { "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
+			with: { "run-knip": true, "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
 		},
 		{
 			name: "test",

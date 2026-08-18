@@ -16,6 +16,7 @@ jobs:
   audit:
     uses: theholocron/.github/.github/workflows/audit.yml@main
     with:
+      run-knip: true
       run-performance: true
       lighthouse-config: lighthouse.config.cjs
     secrets: inherit
