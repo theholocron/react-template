@@ -17,6 +17,8 @@ export default defineConfig({
 			"Test / Test Interactions and Accessibility",
 			"Test / Test User Flow",
 			"Test / Run Storybook interaction tests",
+			"audit / Knip",
+			"codecov/patch",
 		],
 		properties: {
 			...repo.properties,
