@@ -13,6 +13,11 @@ export default defineConfig({
 		topics: ["react", "template", "typescript", "vite"],
 		...repo,
 		protection: "strict",
+		requiredChecks: [
+			"Test / Test Interactions and Accessibility",
+			"Test / Test User Flow",
+			"Test / Run Storybook interaction tests",
+		],
 		properties: {
 			...repo.properties,
 			runtime_environment: "browser",
