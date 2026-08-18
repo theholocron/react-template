@@ -12,7 +12,7 @@ export default defineConfig({
 		teams: [{ slug: "gatekeepers", permission: "maintain" }],
 		topics: ["react", "template", "typescript", "vite"],
 		...repo,
-		protection: "balanced",
+		protection: "strict",
 		properties: {
 			...repo.properties,
 			runtime_environment: "browser",
