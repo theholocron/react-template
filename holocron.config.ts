@@ -22,6 +22,7 @@ export default defineConfig({
 			"Test / Test Visual and Composition (default)",
 			"audit / Audit the bundle size",
 			"audit / Audit the performance",
+			"audit / Knip",
 			"codecov/patch",
 			"codecov/project",
 			"cypress: default-group (merge)",
