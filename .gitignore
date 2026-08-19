@@ -86,6 +86,7 @@ node_modules
 .astro/
 coverage
 dist
+tsconfig.tsbuildinfo
 dist-app
 docs/dist/
 reports

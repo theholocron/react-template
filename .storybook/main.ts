@@ -29,7 +29,8 @@ const config: StorybookConfig = {
 		const { mergeConfig } = await import("vite");
 
 		return mergeConfig(config, {
-			base: configType === "PRODUCTION" ? "/sandbox/" : "/",
+			// Chromatic serves assets at root — only use /sandbox/ for the deployed docs site
+			base: configType === "PRODUCTION" && !process.env["STORYBOOK_IS_CHROMATIC"] ? "/sandbox/" : "/",
 			optimizeDeps: {
 				include: ["react/jsx-dev-runtime", "react-dom/client"],
 			},

@@ -1,7 +1,7 @@
 # AUTO-GENERATED — do not edit directly.
 # Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
-# Tool:    holocron sync-github
-# Changes: edit source in theholocron/holocron and push to alpha or main.
+# Tool:    holocron setup
+# Changes: run `holocron setup` to regenerate.
 name: Test
 
 on: # yamllint disable-line rule:truthy
@@ -22,4 +22,11 @@ jobs:
   test:
     name: Test
     uses: theholocron/.github/.github/workflows/test.yml@main
+    with:
+      run-unit: false
+      run-storybook: true
+      run-interaction: true
+      run-user-flow: true
+      run-chromatic: true
+      chromatic-projects: '[{"tokenName":"","workingDir":".","buildScript":"build:storybook:chromatic"}]'
     secrets: inherit
