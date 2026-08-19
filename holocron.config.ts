@@ -14,11 +14,13 @@ export default defineConfig({
 		...repo,
 		protection: "strict",
 		requiredChecks: [
+			"Test / Run Storybook interaction tests",
 			"Test / Test Interactions and Accessibility",
 			"Test / Test User Flow",
-			"Test / Run Storybook interaction tests",
+			"Test / Test Visual and Composition (default)",
+			"audit / Audit the bundle size",
+			"audit / Audit the performance",
 			"audit / Knip",
-			"codecov/patch",
 		],
 		properties: {
 			...repo.properties,
