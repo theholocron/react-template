@@ -41,6 +41,7 @@ export default defineConfig({
 				"run-interaction": true,
 				"run-user-flow": true,
 				"run-chromatic": true,
+				"chromatic-projects": '[{"tokenName":"","workingDir":".","buildScript":"build:storybook:chromatic"}]',
 			},
 		},
 		{ name: "release", with: { "run-build": true } },

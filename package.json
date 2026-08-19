@@ -29,6 +29,7 @@
     "audit": "knip",
     "build": "vite build",
     "build:storybook": "storybook build",
+    "build:storybook:chromatic": "STORYBOOK_IS_CHROMATIC=true storybook build",
     "dev": "vite",
     "docs:build": "astro build",
     "docs:dev": "astro dev",

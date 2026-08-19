@@ -30,7 +30,7 @@ const config: StorybookConfig = {
 
 		return mergeConfig(config, {
 			// Chromatic serves assets at root — only use /sandbox/ for the deployed docs site
-			base: configType === "PRODUCTION" && !process.env["CHROMATIC"] ? "/sandbox/" : "/",
+			base: configType === "PRODUCTION" && !process.env["STORYBOOK_IS_CHROMATIC"] ? "/sandbox/" : "/",
 			optimizeDeps: {
 				include: ["react/jsx-dev-runtime", "react-dom/client"],
 			},
