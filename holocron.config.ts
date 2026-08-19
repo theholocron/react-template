@@ -17,6 +17,8 @@ export default defineConfig({
 			"Storybook Publish",
 			"UI Review",
 			"UI Tests",
+			"Test / Run Storybook interaction tests",
+			"Test / Test Interactions and Accessibility",
 			"Test / Test User Flow (1)",
 			"Test / Test User Flow (2)",
 			"Test / Test Visual and Composition (default)",
