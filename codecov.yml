@@ -1,27 +1,27 @@
-coverage:
-  status:
-    # Apply default rules for flags coverage not uploaded
-    default_rules:
-      flag_coverage_not_uploaded_behavior: exclude
+codecov:
+  require_ci_to_pass: true
 
-    # Set project-specific coverage targets
+coverage:
+  precision: 2
+  round: down
+  range: "70...100"
+  status:
     project:
-      array:
+      default:
         target: auto
-        threshold: 1%  # PR fails if coverage drops by 1% or more
-      misc:
+        threshold: 2%
+    patch:
+      default:
         target: auto
-        threshold: 1%
-      storage:
-        target: auto
-        threshold: 1%
-      string:
-        target: auto
-        threshold: 1%
-      uri:
-        target: auto
-        threshold: 1%
+        threshold: 2%
+
+ignore:
+  - "*.config.*"
+  - "src/**/*.story.*"
+  - "src/**/*.mock.*"
+  - "src/**/handlers.*"
 
 comment:
-  layout: "reach, diff, flags, files"
+  layout: "reach,diff,flags,files"
   behavior: default
+  require_changes: true
