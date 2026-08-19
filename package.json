@@ -43,7 +43,7 @@
     "test": "vitest",
     "test:coverage": "vitest run --project storybook --coverage",
     "test:cypress": "cypress open",
-    "test:storybook": "vitest run --project storybook",
+    "test:storybook": "vitest run --project storybook --coverage",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
