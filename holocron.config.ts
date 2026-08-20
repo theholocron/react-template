@@ -51,7 +51,7 @@ export default defineConfig({
 				"run-interaction": true,
 				"run-user-flow": true,
 				"run-chromatic": {
-					projects: [{ tokenName: "", workingDir: ".", buildScript: "build:storybook:chromatic" }],
+					projects: [{ tokenName: "default", workingDir: ".", buildScript: "build:storybook:chromatic" }],
 				},
 			},
 		},
