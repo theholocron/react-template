@@ -1,7 +1,7 @@
 # AUTO-GENERATED — do not edit directly.
 # Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
-# Tool:    holocron setup
-# Changes: run `holocron setup` to regenerate.
+# Tool:    holocron sync-github
+# Changes: edit source in theholocron/holocron and push to alpha or main.
 name: Lint
 
 on: # yamllint disable-line rule:truthy
@@ -15,6 +15,7 @@ concurrency:
 
 permissions:
   contents: write
+  issues: write
   statuses: write
 
 jobs:
