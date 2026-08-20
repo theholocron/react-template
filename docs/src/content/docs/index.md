@@ -21,9 +21,21 @@ sidebar:
 | [Prettier](https://prettier.io)                         | Formatting                              |
 | [semantic-release](https://semantic-release.gitbook.io) | Automated releases                      |
 
+## Getting Started
+
+```bash
+npx @theholocron/cli new react my-app \
+  --description "My app description" \
+  --homepage "https://my-app.example.com" \
+  --vault doppler \
+  --agent claude
+```
+
+See [Getting Started](./getting-started) for the full walkthrough including manual setup and available scripts.
+
 ## Quick links
 
-- [Getting started](./getting-started) — use this template in a new project
+- [Getting started](./getting-started) — scaffold a new project with the Holocron CLI
 - [Project structure](./structure) — understand what's where
 - [Components](./components) — building and documenting components
 - [Testing](./testing) — the testing strategy
