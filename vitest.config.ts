@@ -6,10 +6,6 @@ import { defineConfig } from "vitest/config";
  */
 export default defineConfig(async () => ({
 	test: {
-		reporters: ["default", "junit"],
-		outputFile: {
-			junit: "./test-report.junit.xml",
-		},
 		coverage: {
 			...coverage,
 			exclude: [...coverage.exclude, "**/handlers.*", "**/*.{mock}.*", "**/*.css"],
