@@ -56,7 +56,7 @@ export default defineConfig({
 			},
 		},
 		{ name: "release", with: { "run-build": true } },
-		{ name: "deploy", with: { docs: true, storybook: [{ name: "app" }] } },
+		{ name: "deploy", with: { docs: true, storybook: [{ name: "" }] } },
 	],
 	providers: {
 		...providers,
