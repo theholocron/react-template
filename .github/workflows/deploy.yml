@@ -7,6 +7,13 @@ name: Deploy
 on: # yamllint disable-line rule:truthy
   push:
     branches: [main]
+    paths:
+      - docs/**
+      - astro.config.ts
+      - pnpm-workspace.yaml
+      - pnpm-lock.yaml
+      - src/**
+      - .storybook/**
   workflow_dispatch:
 
 concurrency:
