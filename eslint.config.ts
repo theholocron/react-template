@@ -9,10 +9,6 @@ const config: Linter.Config[] = [
 		settings: {
 			react: { version: "19" },
 		},
-		rules: {
-			"react/react-in-jsx-scope": "off",
-			"n/no-missing-import": "off",
-		},
 	},
 ];
 
