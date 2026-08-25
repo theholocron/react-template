@@ -6,6 +6,8 @@ A modern React template with pre-configured tools, best practices, and CI/CD set
 
 <!-- /holocron:description -->
 
+<!-- holocron:template-only -->
+
 ## Getting Started
 
 Use the [Holocron CLI](https://github.com/theholocron/holocron) to scaffold a new React project. It clones the template, renames all placeholder references, wires up your vault provider, and runs `holocron setup` in one step:
@@ -25,7 +27,11 @@ This will:
 3. Run `pnpm install` (including Playwright browser download)
 4. Run `holocron setup` to configure branch protection, labels, workflows, and repo settings
 
+<!-- /holocron:template-only -->
+
 ## Development
+
+<!-- holocron:development -->
 
 This repo uses [pnpm workspaces](https://pnpm.io/workspaces).
 
@@ -38,6 +44,8 @@ pnpm test:coverage # run tests with coverage
 pnpm typecheck     # tsc --noEmit
 pnpm lint          # lint via super-linter (Docker)
 ```
+
+<!-- /holocron:development -->
 
 ## What's Included
 
@@ -57,4 +65,8 @@ pnpm lint          # lint via super-linter (Docker)
 
 ## Releases
 
+<!-- holocron:releases -->
+
 Releases are automated via [semantic-release](https://semantic-release.gitbook.io) on push to `main`. See [CHANGELOG.md](CHANGELOG.md) for the release history.
+
+<!-- /holocron:releases -->
