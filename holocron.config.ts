@@ -56,6 +56,7 @@ export default defineConfig({
 			},
 		},
 		{ name: "release", with: { "run-build": true } },
+		"sync",
 		{ name: "deploy", with: { docs: true, storybook: [{ name: "" }] } },
 	],
 	providers: {
