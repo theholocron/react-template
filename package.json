@@ -145,7 +145,7 @@
     ],
     "overrides": {
       "@commitlint/config-conventional>conventional-changelog-conventionalcommits": "7",
-      "conventional-changelog-conventionalcommits": "10.2.1"
+      "conventional-changelog-conventionalcommits": "9.3.1"
     }
   },
   "msw": {
