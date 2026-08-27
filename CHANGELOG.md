@@ -2,17 +2,17 @@
 
 ### Bug Fixes
 
-* 🐛 pin conventional-changelog-conventionalcommits to 9.3.1 ([#252](https://github.com/theholocron/react-template/issues/252)) ([b935dc3](https://github.com/theholocron/react-template/commit/b935dc32cb95f06efe1e71d68cc45b2a0948eab7))
+- 🐛 pin conventional-changelog-conventionalcommits to 9.3.1 ([#252](https://github.com/theholocron/react-template/issues/252)) ([b935dc3](https://github.com/theholocron/react-template/commit/b935dc32cb95f06efe1e71d68cc45b2a0948eab7))
 
 ### Chores
 
-* 🔧 bump eslint-config to 7.23.1 and drop redundant rule overrides ([#246](https://github.com/theholocron/react-template/issues/246)) ([be31d49](https://github.com/theholocron/react-template/commit/be31d493357a91a5b218aa9cbfba773b764bf10c))
-* add README marker blocks and rename docs index to mdx ([#249](https://github.com/theholocron/react-template/issues/249)) ([d3504c7](https://github.com/theholocron/react-template/commit/d3504c79317778232440e6d8f1b266d5ba16f85a))
-* add sync workflow to holocron.config ([#248](https://github.com/theholocron/react-template/issues/248)) ([3f1a5fa](https://github.com/theholocron/react-template/commit/3f1a5faa3bcc7858db023018ae4eaae1b15b5b60))
-* sync from theholocron/holocron ([#245](https://github.com/theholocron/react-template/issues/245)) ([69d3e3d](https://github.com/theholocron/react-template/commit/69d3e3d404a90b4d75ca1054b098dd33b6cc7899))
-* sync from theholocron/holocron ([#247](https://github.com/theholocron/react-template/issues/247)) ([8732e82](https://github.com/theholocron/react-template/commit/8732e829bbab5eed8689c91580aee28fab873f29))
-* sync from theholocron/holocron ([#250](https://github.com/theholocron/react-template/issues/250)) ([680df1b](https://github.com/theholocron/react-template/commit/680df1b02e1885dad1b34aeb5c2ac32767dbd055))
-* sync from theholocron/holocron ([#251](https://github.com/theholocron/react-template/issues/251)) ([a9fb791](https://github.com/theholocron/react-template/commit/a9fb79138f84328f9fe8e1726bb35eb30bcb135d))
+- 🔧 bump eslint-config to 7.23.1 and drop redundant rule overrides ([#246](https://github.com/theholocron/react-template/issues/246)) ([be31d49](https://github.com/theholocron/react-template/commit/be31d493357a91a5b218aa9cbfba773b764bf10c))
+- add README marker blocks and rename docs index to mdx ([#249](https://github.com/theholocron/react-template/issues/249)) ([d3504c7](https://github.com/theholocron/react-template/commit/d3504c79317778232440e6d8f1b266d5ba16f85a))
+- add sync workflow to holocron.config ([#248](https://github.com/theholocron/react-template/issues/248)) ([3f1a5fa](https://github.com/theholocron/react-template/commit/3f1a5faa3bcc7858db023018ae4eaae1b15b5b60))
+- sync from theholocron/holocron ([#245](https://github.com/theholocron/react-template/issues/245)) ([69d3e3d](https://github.com/theholocron/react-template/commit/69d3e3d404a90b4d75ca1054b098dd33b6cc7899))
+- sync from theholocron/holocron ([#247](https://github.com/theholocron/react-template/issues/247)) ([8732e82](https://github.com/theholocron/react-template/commit/8732e829bbab5eed8689c91580aee28fab873f29))
+- sync from theholocron/holocron ([#250](https://github.com/theholocron/react-template/issues/250)) ([680df1b](https://github.com/theholocron/react-template/commit/680df1b02e1885dad1b34aeb5c2ac32767dbd055))
+- sync from theholocron/holocron ([#251](https://github.com/theholocron/react-template/issues/251)) ([a9fb791](https://github.com/theholocron/react-template/commit/a9fb79138f84328f9fe8e1726bb35eb30bcb135d))
 
 ## [0.5.3](https://github.com/theholocron/react-template/compare/v0.5.2...v0.5.3) (2026-08-20)
 
