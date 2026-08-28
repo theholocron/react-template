@@ -5,7 +5,8 @@
   "keywords": [
     "react",
     "template",
-    "theholocron"
+    "typescript",
+    "vite"
   ],
   "homepage": "https://docs.theholocron.dev/react-template/",
   "bugs": "https://github.com/theholocron/react-template/issues",
