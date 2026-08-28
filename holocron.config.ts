@@ -15,7 +15,7 @@ export default defineConfig({
 		topics: ["react", "template", "typescript", "vite"],
 		...repo,
 		requiredChecks: [
-			...repo.requiredChecks,
+			...(repo.requiredChecks ?? []),
 			"Test / Run Storybook interaction tests",
 			"Test / Test Interactions and Accessibility",
 			"Test / Test User Flow (1)",
