@@ -1,3 +1,16 @@
+## [0.5.5](https://github.com/theholocron/react-template/compare/v0.5.4...v0.5.5) (2026-08-31)
+
+### Bug Fixes
+
+* **deploy:** 🐛 remove stale name: input from deploy workflow ([#258](https://github.com/theholocron/react-template/issues/258)) ([dcaaae6](https://github.com/theholocron/react-template/commit/dcaaae61c2d9ed7518d13a9bc263a83c1b966b90))
+
+### Chores
+
+* 🔧 ⬆️ adopt preset from @theholocron/holocron-config@7.26.0 ([#254](https://github.com/theholocron/react-template/issues/254)) ([5a427ca](https://github.com/theholocron/react-template/commit/5a427cad5cf75ed483bd21b70c9f40e738fecb2a))
+* 🔧 ⬆️ bump @theholocron/cli, holocron-config, and holocron-plugin-github to latest ([#259](https://github.com/theholocron/react-template/issues/259)) ([0104a94](https://github.com/theholocron/react-template/commit/0104a94ccc529c004fee76f17339c4bd329b941a))
+* sync from theholocron/holocron ([#253](https://github.com/theholocron/react-template/issues/253)) ([6d76e91](https://github.com/theholocron/react-template/commit/6d76e91212653c016c7d2b6e26c617deffc1616a))
+* sync README and repo metadata ([#255](https://github.com/theholocron/react-template/issues/255)) ([95fa016](https://github.com/theholocron/react-template/commit/95fa0166b8479e676f3e69c5602565ae624e359b))
+
 ## [0.5.4](https://github.com/theholocron/react-template/compare/v0.5.3...v0.5.4) (2026-08-26)
 
 ### Bug Fixes
