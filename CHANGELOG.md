@@ -1,3 +1,13 @@
+## [0.5.6](https://github.com/theholocron/react-template/compare/v0.5.5...v0.5.6) (2026-08-31)
+
+### Bug Fixes
+
+* **config:** 🐛 merge chromatic and user-flow into react() test param ([#262](https://github.com/theholocron/react-template/issues/262)) ([9a5c8cf](https://github.com/theholocron/react-template/commit/9a5c8cfc9e90167cf40e529c78520d054f34d735)), closes [theholocron/configs#419](https://github.com/theholocron/configs/issues/419)
+
+### Chores
+
+* sync README and repo metadata ([#261](https://github.com/theholocron/react-template/issues/261)) ([fc99040](https://github.com/theholocron/react-template/commit/fc990401f002c204756bd19fde0657412d4c410a))
+
 ## [0.5.5](https://github.com/theholocron/react-template/compare/v0.5.4...v0.5.5) (2026-08-31)
 
 ### Bug Fixes

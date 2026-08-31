@@ -1,6 +1,6 @@
 {
   "name": "@theholocron/react-template",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "A modern React template with pre-configured tools, best practices, and CI/CD setup for rapid project development.",
   "keywords": [
     "react",
