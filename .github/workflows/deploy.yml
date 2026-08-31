@@ -31,6 +31,5 @@ jobs:
     uses: theholocron/.github/.github/workflows/deploy.yml@main
     with:
       type: docs
-      name: theholocron/react-template
       storybook-projects: '[{"name":"","workingDir":"."}]'
     secrets: inherit

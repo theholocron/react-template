@@ -23,10 +23,7 @@ jobs:
     name: Test
     uses: theholocron/.github/.github/workflows/test.yml@main
     with:
-      run-unit: false
-      run-storybook: true
-      run-interaction: true
-      run-user-flow: true
+      run-unit: true
       run-chromatic: true
       chromatic-projects: '[{"tokenName":"default","workingDir":".","buildScript":"build:storybook:chromatic"}]'
     secrets: inherit
