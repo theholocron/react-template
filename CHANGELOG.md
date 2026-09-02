@@ -1,3 +1,13 @@
+## [0.6.0](https://github.com/theholocron/react-template/compare/v0.5.6...v0.6.0) (2026-09-02)
+
+### Features
+
+* ✨ add wiki/fern docs setup ([#264](https://github.com/theholocron/react-template/issues/264)) ([a76ed34](https://github.com/theholocron/react-template/commit/a76ed34efdffa1ad8a4cf184b618a1d05a9628a3))
+
+### Chores
+
+* sync README and repo metadata ([#263](https://github.com/theholocron/react-template/issues/263)) ([ee17ebe](https://github.com/theholocron/react-template/commit/ee17ebedd5105c0abbdd53e0fdcddf1e9be5667f))
+
 ## [0.5.6](https://github.com/theholocron/react-template/compare/v0.5.5...v0.5.6) (2026-08-31)
 
 ### Bug Fixes
