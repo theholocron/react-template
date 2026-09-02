@@ -1,15 +1,18 @@
 import type { HolocronConfig } from "@theholocron/cli";
 import { defineConfig } from "@theholocron/cli";
-import { react } from "@theholocron/holocron-config";
+import { compose, react, wikiCapability as wiki } from "@theholocron/holocron-config";
 
-const preset = react({
-	test: {
-		"run-user-flow": true,
-		"run-chromatic": {
-			projects: [{ tokenName: "default", workingDir: ".", buildScript: "build:storybook:chromatic" }],
+const preset = compose(
+	react({
+		test: {
+			"run-user-flow": true,
+			"run-chromatic": {
+				projects: [{ tokenName: "default", workingDir: ".", buildScript: "build:storybook:chromatic" }],
+			},
 		},
-	},
-});
+	}),
+	wiki()
+);
 export default defineConfig({
 	...preset,
 	description:
