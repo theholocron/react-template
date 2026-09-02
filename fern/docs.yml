@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=https://schema.buildwithfern.dev/docs-yml.json
+
+instances:
+  - url: holocron.docs.buildwithfern.com/react-template
+    custom-domain: wiki.theholocron.dev/react-template
+    multi-source: true
+
+title: react-template Engineering
+
+layout:
+  page-width: full
+  tabs-placement: header
+  searchbar-placement: header
+
+tabs:
+  decisions:
+    display-name: Decisions
+    icon: fa-duotone fa-scale-balanced
+  standards:
+    display-name: Standards
+    icon: fa-duotone fa-book
+  specifications:
+    display-name: Specifications
+    icon: fa-duotone fa-file-lines
+
+navigation:
+  - tab: decisions
+    layout:
+      - section: Architecture Decision Records
+        contents:
+          - page: Index
+            path: ../docs/wiki/decisions/README.md
+  - tab: standards
+    layout:
+      - section: Standards
+        contents:
+          - page: Overview
+            path: ../docs/wiki/standards/README.md
+  - tab: specifications
+    layout:
+      - section: Specifications
+        contents:
+          - page: Overview
+            path: ../docs/wiki/specifications/README.md
+
+colors:
+  accent-primary:
+    dark: "#70E155"
+    light: "#008700"
+
+logo:
+  height: 20
+
+metadata:
+  og:dynamic: true
