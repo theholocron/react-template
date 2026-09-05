@@ -41,7 +41,10 @@ export default defineConfig({
 		"sync",
 		{ name: "deploy", with: { docs: true, storybook: [{ name: "" }] } },
 	],
-	providers: { ...preset.providers },
+	providers: {
+		...preset.providers,
+		wiki: ["fern", { domain: "wiki.theholocron.dev", fernOrg: "holocron", icon: "fa-duotone fa-copy" }],
+	},
 	agent: "claude",
 	skills: ["git-safety", "pr-workflow", "commit-standards", "security-review"],
 } satisfies HolocronConfig);
