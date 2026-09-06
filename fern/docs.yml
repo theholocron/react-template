@@ -4,6 +4,11 @@ instances:
   - url: holocron.docs.buildwithfern.com/react-template
     custom-domain: wiki.theholocron.dev/react-template
     multi-source: true
+    edit-this-page:
+      github:
+        owner: theholocron
+        repo: react-template
+        branch: main
 
 title: react-template Engineering
 
@@ -42,6 +47,40 @@ navigation:
         contents:
           - page: Overview
             path: ../docs/wiki/specifications/README.md
+
+navbar-links:
+  - type: github
+    value: https://github.com/theholocron/react-template
+  - type: dropdown
+    text: Other Projects
+    icon: fa-duotone fa-book
+    links:
+      - href: https://wiki.theholocron.dev
+        text: Cli Template
+      - href: https://wiki.theholocron.dev
+        text: Clients
+      - href: https://wiki.theholocron.dev
+        text: Configs
+      - href: https://wiki.theholocron.dev
+        text: Holocron
+      - href: https://wiki.theholocron.dev/internal
+        text: Internal
+      - href: https://wiki.theholocron.dev
+        text: Monorepo Nextjs Template
+      - href: https://wiki.theholocron.dev
+        text: Monorepo React Template
+      - href: https://wiki.theholocron.dev
+        text: Monorepo Template
+      - href: https://wiki.theholocron.dev
+        text: Nextjs Template
+      - href: https://wiki.theholocron.dev
+        text: Node Template
+      - href: https://wiki.theholocron.dev
+        text: Skills
+      - href: https://wiki.theholocron.dev
+        text: Themes
+      - href: https://wiki.theholocron.dev
+        text: Utils
 
 colors:
   accent-primary:
