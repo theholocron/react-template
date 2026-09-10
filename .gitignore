@@ -100,3 +100,6 @@ super-linter-output
 /.claude/skills/commit-standards
 /.claude/skills/security-review
 # end managed by holocron setup — skills
+
+# lighthouse-ci run output
+/.lighthouseci/
