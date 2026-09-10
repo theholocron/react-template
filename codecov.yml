@@ -9,10 +9,12 @@ coverage:
     project:
       default:
         target: auto
+        if_not_found: success
         threshold: 2%
     patch:
       default:
         target: auto
+        if_not_found: success
         threshold: 2%
 
 ignore:

@@ -38,7 +38,7 @@
     "docs:dev": "astro dev",
     "docs:preview": "astro preview",
     "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
-    "prepare": "husky && playwright install chromium",
+    "prepare": "husky",
     "prepreview": "pnpm build --config vite.app.config.ts",
     "preview": "vite preview --config vite.app.config.ts",
     "release": "semantic-release",

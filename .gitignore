@@ -103,3 +103,7 @@ super-linter-output
 
 # lighthouse-ci run output
 /.lighthouseci/
+
+# managed by holocron setup — prompts
+/.agents/prompts/
+# end managed by holocron setup — prompts

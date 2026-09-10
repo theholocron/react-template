@@ -1,7 +1,7 @@
 # AUTO-GENERATED — do not edit directly.
-# Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
-# Tool:    holocron sync-github
-# Changes: edit source in theholocron/holocron and push to alpha or main.
+# Source:  theholocron/holocron · packages/cli/src/commands/setup/run-setup.ts
+# Tool:    holocron setup
+# Changes: edit source in theholocron/holocron
 name: Wiki
 
 on: # yamllint disable-line rule:truthy
@@ -32,6 +32,4 @@ jobs:
     with:
       preview: true
       preview-id: pr-${{ github.event.pull_request.number }}
-      fern-org: holocron
-      base-path: react-template
     secrets: inherit

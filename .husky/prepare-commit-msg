@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# AUTO-GENERATED — do not edit directly.
+# Source:  theholocron/holocron · packages/cli/src/templates/configs/prepare-commit-msg/create-config.ts
+# Tool:    holocron setup
+# Changes: edit source in theholocron/holocron
 NAME=$(git config user.name)
 EMAIL=$(git config user.email)
 
