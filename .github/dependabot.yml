@@ -1,7 +1,7 @@
 # AUTO-GENERATED — do not edit directly.
-# Source:  theholocron/holocron · packages/cli/src/commands/setup.ts
+# Source:  theholocron/holocron · packages/cli/src/commands/setup/run-setup.ts
 # Tool:    holocron setup
-# Changes: run `holocron setup` to regenerate.
+# Changes: edit source in theholocron/holocron
 version: 2
 updates:
   - package-ecosystem: npm
