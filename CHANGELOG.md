@@ -2,12 +2,12 @@
 
 ### Features
 
-* ✨ add wiki navbar links ([#268](https://github.com/theholocron/react-template/issues/268)) ([9d0a113](https://github.com/theholocron/react-template/commit/9d0a113944bd28e5d1c50bd76a4d138d311db2b5))
+- ✨ add wiki navbar links ([#268](https://github.com/theholocron/react-template/issues/268)) ([9d0a113](https://github.com/theholocron/react-template/commit/9d0a113944bd28e5d1c50bd76a4d138d311db2b5))
 
 ### Chores
 
-* ✨ add wiki icon and bump Fern to 5.114.1 ([#266](https://github.com/theholocron/react-template/issues/266)) ([7709245](https://github.com/theholocron/react-template/commit/7709245a7e7f6d557fb95ee6ef3f54507a4fac75))
-* 🗑️ remove orphaned workflow files ([#265](https://github.com/theholocron/react-template/issues/265)) ([470910a](https://github.com/theholocron/react-template/commit/470910a692e8f6eb6dd3cf15efdcf790db4c4640))
+- ✨ add wiki icon and bump Fern to 5.114.1 ([#266](https://github.com/theholocron/react-template/issues/266)) ([7709245](https://github.com/theholocron/react-template/commit/7709245a7e7f6d557fb95ee6ef3f54507a4fac75))
+- 🗑️ remove orphaned workflow files ([#265](https://github.com/theholocron/react-template/issues/265)) ([470910a](https://github.com/theholocron/react-template/commit/470910a692e8f6eb6dd3cf15efdcf790db4c4640))
 
 ## [0.6.0](https://github.com/theholocron/react-template/compare/v0.5.6...v0.6.0) (2026-09-02)
 
