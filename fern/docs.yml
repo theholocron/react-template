@@ -61,8 +61,6 @@ navbar-links:
         text: Clients
       - href: https://wiki.theholocron.dev
         text: Configs
-      - href: https://wiki.theholocron.dev
-        text: Holocron
       - href: https://wiki.theholocron.dev/internal
         text: Internal
       - href: https://wiki.theholocron.dev
@@ -75,6 +73,8 @@ navbar-links:
         text: Nextjs Template
       - href: https://wiki.theholocron.dev
         text: Node Template
+      - href: https://wiki.theholocron.dev
+        text: Observability
       - href: https://wiki.theholocron.dev
         text: Skills
       - href: https://wiki.theholocron.dev
