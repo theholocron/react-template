@@ -2,12 +2,12 @@
 
 ### Bug Fixes
 
-* **hooks:** 🐛 scope pre-commit GitLeaks scan to staged changes ([#276](https://github.com/theholocron/react-template/issues/276)) ([ce649a8](https://github.com/theholocron/react-template/commit/ce649a8366ab56c69f0e47dd71c4dbb0fad74ef9))
+- **hooks:** 🐛 scope pre-commit GitLeaks scan to staged changes ([#276](https://github.com/theholocron/react-template/issues/276)) ([ce649a8](https://github.com/theholocron/react-template/commit/ce649a8366ab56c69f0e47dd71c4dbb0fad74ef9))
 
 ### Chores
 
-* ⬆️ migrate to @theholocron/cli 4.16.2 + holocron-config 8.x ([#273](https://github.com/theholocron/react-template/issues/273)) ([38a20fb](https://github.com/theholocron/react-template/commit/38a20fb6e3450f0504e65660e80646290db229e5)), closes [#647](https://github.com/theholocron/react-template/issues/647) [#652](https://github.com/theholocron/react-template/issues/652)
-* 🔧 holocron setup — ruleset + workflow/config sync ([#274](https://github.com/theholocron/react-template/issues/274)) ([85ac14b](https://github.com/theholocron/react-template/commit/85ac14b4d09d28d4de105d58359daa42ab31be2b)), closes [#647](https://github.com/theholocron/react-template/issues/647) [#649](https://github.com/theholocron/react-template/issues/649) [#649](https://github.com/theholocron/react-template/issues/649) [#647](https://github.com/theholocron/react-template/issues/647)
+- ⬆️ migrate to @theholocron/cli 4.16.2 + holocron-config 8.x ([#273](https://github.com/theholocron/react-template/issues/273)) ([38a20fb](https://github.com/theholocron/react-template/commit/38a20fb6e3450f0504e65660e80646290db229e5)), closes [#647](https://github.com/theholocron/react-template/issues/647) [#652](https://github.com/theholocron/react-template/issues/652)
+- 🔧 holocron setup — ruleset + workflow/config sync ([#274](https://github.com/theholocron/react-template/issues/274)) ([85ac14b](https://github.com/theholocron/react-template/commit/85ac14b4d09d28d4de105d58359daa42ab31be2b)), closes [#647](https://github.com/theholocron/react-template/issues/647) [#649](https://github.com/theholocron/react-template/issues/649) [#649](https://github.com/theholocron/react-template/issues/649) [#647](https://github.com/theholocron/react-template/issues/647)
 
 ## [0.7.0](https://github.com/theholocron/react-template/compare/v0.6.0...v0.7.0) (2026-09-06)
 

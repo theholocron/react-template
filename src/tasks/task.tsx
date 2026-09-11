@@ -10,7 +10,7 @@ export interface TaskProps {
 	onDeleteTask: (id: string) => void;
 }
 
-export function Task (props: TaskProps) {
+export function Task(props: TaskProps) {
 	const {
 		task: { id, title, state },
 		onArchiveTask,
@@ -47,11 +47,7 @@ export function Task (props: TaskProps) {
 					onChange={(e) => onEditTitle(e.target.value, id)}
 				/>
 			</label>
-			<button
-				aria-label="delete"
-				className="delete-button"
-				onClick={() => onDeleteTask(id)}
-			>
+			<button aria-label="delete" className="delete-button" onClick={() => onDeleteTask(id)}>
 				<span className="icon-trash" />
 			</button>
 			{state !== "TASK_ARCHIVED" && (
