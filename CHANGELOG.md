@@ -1,3 +1,9 @@
+## [0.7.2](https://github.com/theholocron/react-template/compare/v0.7.1...v0.7.2) (2026-09-12)
+
+### Bug Fixes
+
+* 🐛 rename yamllint.config.yml to .yamllint.yml for auto-detection ([#277](https://github.com/theholocron/react-template/issues/277)) ([457030b](https://github.com/theholocron/react-template/commit/457030bba332bb57845af76256298d5db7c46778))
+
 ## [0.7.1](https://github.com/theholocron/react-template/compare/v0.7.0...v0.7.1) (2026-09-11)
 
 ### Bug Fixes
