@@ -11,7 +11,7 @@
   "homepage": "https://docs.theholocron.dev/react-template/",
   "bugs": "https://github.com/theholocron/react-template/issues",
   "repository": "theholocron/react-template",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "author": "Newton Koumantzelis",
   "sideEffects": false,
   "type": "module",
